@@ -1,0 +1,283 @@
+\documentclass[12pt,oneside,letterpaper]{article}
+\usepackage{longtable}
+%\usepackage{fullpage}
+
+\newenvironment{packed_enumerate}{ %custom enumerate for single-spacing
+\vspace{-7mm}
+\begin{enumerate}
+  \setlength{\itemsep}{0pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{enumerate}
+\vspace{-8mm}}
+
+\pagestyle{headings}
+\oddsidemargin 0.25in \textwidth     6.25in \topmargin     0.4in
+\textheight    8.5in
+
+\begin{document}
+
+
+\title{\bfseries Project Name: \\
+Software Requirements Specification\\
+version 1.0}
+
+\author {
+\large{Team Name}\\
+\emph{Computer Science Department}\\
+\emph{California Polytechnic State University}\\
+\emph{San Luis Obispo, CA USA}\\
+}
+
+\date{October 10, 2017}
+\maketitle \thispagestyle{empty}
+
+
+\pagebreak
+\tableofcontents
+
+\addcontentsline{toc}{section}{Revision History}
+
+\addcontentsline{toc}{section}{Credits}
+
+\section*{Credits}
+\begin{tabular}{|l|l|p{2.5in}|l|}
+\hline
+\textbf{Name}&\textbf{Date}&\textbf{Role}&\textbf{Version}\\
+\hline
+John Smith&October 10, 2009&Document Owner&1.0\\
+\hline
+Sally Jones&October 10, 2009&Lead Author of Business Requirements&1.0\\
+\hline
+&&&\\
+\hline
+&&&\\
+\hline
+\end{tabular}
+
+\section*{Revision History}
+\begin{tabular}{|l|l|p{2.5in}|l|}
+\hline
+\textbf{Name}&\textbf{Date}&\textbf{Reason for Changes}&\textbf{Version}\\
+\hline
+John Smith&October 10, 2008&Initial baseline approved by Customer&1.0\\
+\hline
+&&&\\
+\hline
+&&&\\
+\hline
+&&&\\
+\hline
+\end{tabular}
+
+\newpage
+
+\section{Introduction}
+\subsection{Purpose}
+Identify the product whose software requirements are specified in this document, including the revision or release number. Describe the scope of the product that is covered by this SRS, particularly if this SRS describes only part of the system or a single subsystem.
+\subsection{Document Conventions}
+Describe any standards or typographical conventions that were followed when writing this SRS, such as fonts or highlighting that have special significance. For example, state whether priorities  for higher-level requirements are assumed to be inherited by detailed requirements, or whether every requirement statement is to have its own priority.
+\subsection{Intended Audience and Reading Suggestions}
+Describe the different types of reader that the document is intended for, such as developers, project managers, marketing staff, users, testers, and documentation writers. Describe what the rest of this SRS contains and how it is organized. Suggest a sequence for reading the document, beginning with the overview sections and proceeding through the sections that are most pertinent to each reader type.
+\subsection{Project Scope}
+Provide a short description of the software being specified and its purpose, including relevant benefits, objectives, and goals. Relate the software to corporate goals or business strategies. If a separate vision and scope document is available, refer to it rather than duplicating its contents here. An SRS that specifies the next release of an evolving product should contain its own scope statement as a subset of the long-term strategic product vision.
+\subsection{References}
+List any other documents or Web addresses to which this SRS refers. These may include user interface style guides, contracts, standards, system requirements specifications, use case documents, or a vision and scope document. Provide enough information so that the reader could access a copy of each reference, including title, author, version number, date, and source or location.
+
+\section{Overall Description}
+\subsection{Product Perspective}
+Describe the context and origin of the product being specified in this SRS. For example, state whether this product is a follow-on member of a product family, a replacement for certain existing systems, or a new, self-contained product. If the SRS defines a component of a larger system, relate the requirements of the larger system to the functionality of this software and identify interfaces between the two. A simple diagram that shows the major components of the overall system, subsystem interconnections, and external interfaces can be helpful.
+\subsection{Product Features}
+Summarize the major features the product contains or the significant functions that it performs or lets the user perform. Details will be provided in Section 3, so only a high level summary  is needed here. Organize the functions to make them understandable to any reader of the SRS. A picture of the major groups of related requirements and how they relate, such as a top level data flow diagram or a class diagram, is often effective.
+\subsection{User Personas}
+Provide several fictitious profiles of individuals who might interact with your system.  Each should give some context identifying their relevant skills and motivations for using the system.  Each should be unique from the others to highlight different modes of use, reasons for use, and challenges.  
+\subsection{User Classes and Characteristics}
+Identify the various user classes that you anticipate will use this product. User classes may be differentiated based on frequency of use, subset of product functions used, technical expertise, security or privilege levels, educational level, or experience. Describe the pertinent characteristics of each user class. Certain requirements may pertain only to certain user classes. Distinguish the favored user classes from those who are less important to satisfy.  You might use a table like this:
+\begin{longtable}{|l|p{3.8in}|}
+\hline
+\textbf{User Class}&\textbf{Description}\\
+\hline
+Employee&This is a description of an employee\\
+\hline
+Administrator&This is a description of an administrator\\
+\hline
+\end{longtable}
+
+\subsection{Operating Environment}
+Describe the environment in which the software will operate, including the hardware platform, operating system and versions, and any other software components or applications with which it must peacefully coexist.
+\subsection{Design and Implementation Constraints}
+Describe any items or issues that will limit the options available to the developers. These might include: corporate or regulatory policies; hardware limitations (timing requirements, memory requirements); interfaces to other applications; specific technologies, tools, and databases to be used; parallel operations; language requirements; communications protocols; security considerations; design conventions or programming standards (for example, if the customer's organization will be responsible for maintaining the delivered software).
+\subsection{User Documentation}
+List the user documentation components (such as user manuals, on-line help, and tutorials) that will be delivered along with the software. Identify any known user documentation delivery formats or standards.
+\subsection{Assumptions and Dependencies}
+List any assumed factors (as opposed to known facts) that could affect the requirements stated in the SRS. These could include third-party or commercial components that you plan to use, issues around the development or operating environment, or constraints. The project could be affected if these assumptions are incorrect, are not shared, or change. Also identify any dependencies the project has on external factors, such as software components that you intend to reuse from another project, unless they are already documented elsewhere (for example, in the vision and scope document or the project plan).
+\subsection{Business Rules}
+List any business rules.  Identify each one uniquely.
+
+
+\section{Use Cases}
+
+\subsection{\label{Order Meal}Use Case 1: Order Meal}
+This is a fully dressed use case taken from Karl Weigers sample.
+
+\begin{longtable}{|r|p{3.8in}|}
+\hline
+Use Case ID:&1\\
+\hline
+Use Case Name:&Order Meal\\
+\hline
+Created By:&Karl Wiegers\\
+\hline
+Last Updated By:&Jack McGillicutty\\
+\hline
+Date Created:&October 21, 2002\\
+\hline
+Date Last Updated:&November 7, 2002\\
+\hline
+Actors:&Patron\\
+\hline
+Description:&A Patron accesses the Cafeteria Ordering System from the corporate intranet or from home, optionally views the menu for a specific date, selects food items, and places an order for a meal to be delivered to a specified location within a specified 15-minute time window.\\
+\hline
+Preconditions:&
+\begin{packed_enumerate}
+\item Patron is logged into COS.
+\item Patron is registered for meal payments by payroll deduction.
+\end{packed_enumerate}\\
+\hline
+Postconditions:&
+\begin{packed_enumerate}
+\item Meal order is stored in COS with a status of "accepted".
+\item Inventory of available food items is updated to reflect items in this order.
+\item Remaining delivery capacity for the requested time window is updated to reflect this delivery request.
+\end{packed_enumerate}\\
+\hline
+Normal Flow:&1.0 Order a Single Meal\\
+&  %line needed for aligning enumeration 
+\begin{packed_enumerate}
+\item Patron asks to view menu for a specified date.
+\item System displays menu of available food items and the daily special.
+\item Patron selects one or more food items from menu.
+\item Patron indicates that meal order is complete.
+\item System displays ordered menu items, individual prices, and total price, including any taxes and delivery charge.
+\item Patron confirms meal order or requests to modify meal order (back to step 3).
+\item System displays available delivery times for the delivery date.
+\item Patron selects a delivery time and specifies the delivery location.
+\item Patron specifies payment method.
+\item System confirms acceptance of the order.
+\item System sends Patron an e-mail confirming order details, price, and delivery instructions.
+\item System stores order in database, sends e-mail to notify Cafeteria Staff, sends food item information to Cafeteria Inventory System, and updates available delivery times.
+\end{packed_enumerate}\\
+\hline
+Alternative Flows:&1.1 Order multiple meals (branch after step 4)\\
+&  %line needed for aligning enumeration 
+\begin{packed_enumerate}
+\item Patron asks to order another meal.
+\item Return to step 2.
+\end{packed_enumerate}\\
+&1.2 Order multiple identical meals (after step 3)\\
+&  %line needed for aligning enumeration 
+\begin{packed_enumerate}
+\item Patron requests a specified number of identical meals.
+\item Return to step 4.
+\end{packed_enumerate}\\
+&1.3. Order the daily special (after step 2)\\
+&  %line needed for aligning enumeration 
+\begin{packed_enumerate}
+\item Patron orders the daily special from the menu.
+\item Return to step 5.
+\end{packed_enumerate}\\
+\hline
+Exceptions:&1.0.E.1 Current time is after order cutoff time (at step 1)\\
+&1. 	System informs Patron that it's too late to place an order for today.\\
+&2a.	Patron cancels the meal order.\\
+&2b.	System terminates use case.\\
+&3a.	Patron requests to select another date.\\
+&3b.	System restarts use case.\\
+\hline
+Includes:&None\\
+\hline
+Priority:&High\\
+\hline
+Frequency of Use:&Approximately 400 users, average of one usage per day\\
+\hline
+Business Rules:&BR-1, BR-2, BR-3, BR-4, BR-8, BR-11, BR-12, BR-33\\
+\hline
+Special Requirements:&
+\begin{packed_enumerate}
+\item Patron shall be able to cancel the meal order at any time prior to confirming the order.
+\item Patron shall be able to view all meals he ordered within the previous six months and repeat one of those meals as the new order, provided that all food items are available on the menu for the requested delivery date. (Priority = medium)
+\end{packed_enumerate}\\
+\hline
+Assumptions:&Assume that 30 percent of Patrons will order the daily special (source: previous six months of cafeteria data).\\
+\hline
+Notes and Issues:&
+\begin{packed_enumerate}
+\item The default date is the current date if the Patron is using the system before today's order cutoff time. Otherwise, the default date is the next day that the cafeteria is open.
+\item If Patron doesn't want to have the meal delivered, the precondition requiring registration for payroll deduction is not applicable.
+\item Peak usage load for this use case is between 8:00am and 10:00am local time.
+\end{packed_enumerate}\\
+\hline
+\end{longtable}
+
+\subsection{\label{Whatever the next one is}Use Case 2: Whatever the next one is}
+This is a casual use-case.  Note that there is a label in the LaTeX so you can refer
+to it as being in section~\ref{Whatever the next one is} on page~\pageref{Whatever the next one is}.
+\begin{enumerate}
+\item This is step one.
+\item This is step two.
+\item This is step three.
+\end{enumerate}
+
+\section{System Features}
+This template illustrates organizing the functional requirements for the product by system features, the major services provided by the product. You may prefer to organize this section by use case, mode of operation, user class, object class, functional hierarchy, or combinations of these, whatever makes the most logical sense for your product.
+\subsection{System Feature 1}
+Don't really say ``System Feature 1.'' State the feature name in just a few words.
+\subsubsection{Description and Priority}
+Provide a short description of the feature and indicate whether it is of High, Medium, or Low priority. You could also include specific priority component ratings, such as benefit, penalty, cost, and risk (each rated on a relative scale from a low of 1 to a high of 9).
+\subsubsection{Stimulus/Response Sequences}
+List the sequences of user actions and system responses that stimulate the behavior defined for this feature. These will correspond to the dialog elements associated with use cases.
+\subsubsection{Functional Requirements}
+Itemize the detailed functional requirements associated with this feature. These are the software capabilities that must be present in order for the user to carry out the services provided by the feature, or to execute the use case. Include how the product should respond to anticipated error conditions or invalid inputs. Requirements should be concise, complete, unambiguous, verifiable, and necessary. Use "TBD" as a placeholder to indicate when necessary information is not yet available.\\
+\\
+Each requirement should be uniquely identified with a sequence number or a meaningful tag of some kind.
+
+\begin{enumerate}
+\item REQ-1:
+\item REQ-2:
+\end{enumerate}
+
+\subsection{System Feature 2 (and so on)}
+
+\section{External Interface Requirements}
+\subsection{User Interfaces}
+Describe the logical characteristics of each interface between the software product and the users. This may include sample screen images, any GUI standards or product family style guides that are to be followed, screen layout constraints, standard buttons and functions (e.g., help) that will appear on every screen, keyboard shortcuts, error message display standards, and so on. Define the software components for which a user interface is needed. Details of the user interface design should be documented in a separate user interface specification.
+\subsection{Hardware Interfaces}
+Describe the logical and physical characteristics of each interface between the software product and the hardware components of the system. This may include the supported device types, the nature of the data and control interactions between the software and the hardware, and communication protocols to be used.
+\subsection{Software Interfaces}
+Describe the connections between this product and other specific software components (name and version), including databases, operating systems, tools, libraries, and integrated commercial components. Identify the data items or messages coming into the system and going out and describe the purpose of each. Describe the services needed and the nature of communications. Refer to documents that describe detailed application programming interface protocols. Identify data that will be shared across software components. If the data sharing mechanism must be implemented in a specific way (for example, use of a global data area in a multitasking operating system), specify this as an implementation constraint.
+\subsection{Communications Interfaces}
+Describe the requirements associated with any communications functions required by this product, including e-mail, web browser, network server communications protocols, electronic forms, and so on. Define any pertinent message formatting. Identify any communication standards that will be used, such as FTP or HTTP. Specify any communication security or encryption issues, data transfer rates, and synchronization mechanisms.
+
+\section{Other Nonfunctional Requirements}
+\subsection{Performance Requirements}
+If there are performance requirements for the product under various circumstances, state them here and explain their rationale, to help the developers understand the intent and make suitable design choices. Specify the timing relationships for real time systems. Make such requirements as specific as possible. You may need to state performance requirements for individual functional requirements or features.
+\subsection{Safety Requirements}
+Specify those requirements that are concerned with possible loss, damage, or harm that could result from the use of the product. Define any safeguards or actions that must be taken, as well as actions that must be prevented. Refer to any external policies or regulations that state safety issues that affect the product's design or use. Define any safety certifications that must be satisfied.
+\subsection{Security Requirements}
+Specify any requirements regarding security or privacy issues surrounding use of the product or protection of the data used or created by the product. Define any user identity authentication requirements. Refer to any external policies or regulations containing security issues that affect the product. Define any security or privacy certifications that must be satisfied.
+\subsection{Software Quality Attributes}
+Specify any additional quality characteristics for the product that will be important to either the customers or the developers. Some to consider are: adaptability, availability, correctness, flexibility, interoperability, maintainability, portability, reliability, reusability, robustness, testability, and usability. Write these to be specific, quantitative, and verifiable when possible. At the least, clarify the relative preferences for various attributes, such as ease of use over ease of learning.
+
+\section{Other Requirements}
+Define any other requirements not covered elsewhere in the SRS. This might include database requirements, internationalization requirements, legal requirements, reuse objectives for the project, and so on. Add any new sections that are pertinent to the project.
+
+\appendix
+\section{Glossary}
+Define all the terms necessary to properly interpret the SRS, including acronyms and abbreviations. You may wish to build a separate glossary that spans multiple projects or the entire organization, and just include terms specific to a single project in each SRS.
+
+\section{Analysis Models}
+Optionally, include any pertinent analysis models, such as data flow diagrams, class diagrams, state-transition diagrams, or entity-relationship diagrams.
+
+\section{Issues List}
+This is a dynamic list of the open requirements issues that remain to be resolved, including TBDs, pending decisions, information that is needed, conflicts awaiting resolution, and the like.
+\end{document}
