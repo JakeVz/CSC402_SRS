@@ -18,12 +18,12 @@
 \begin{document}
 
 
-\title{\bfseries Project Name: \\
+\title{\bfseries Data Classifier: \\
 Software Requirements Specification\\
 version 1.0}
 
 \author {
-\large{Team Name}\\
+\large{Team Mark}\\
 \emph{Computer Science Department}\\
 \emph{California Polytechnic State University}\\
 \emph{San Luis Obispo, CA USA}\\
@@ -175,20 +175,18 @@ Alternative Flows:&1.1 No results from backend (branch after step )\\
 \item Return to step 8.
 \end{packed_enumerate}\\
 \hline
-Exceptions:&1.0.E.1 Current time is after order cutoff time (at step 1)\\
-&1. 	System informs Patron that it's too late to place an order for today.\\
-&2a.	Patron cancels the meal order.\\
-&2b.	System terminates use case.\\
-&3a.	Patron requests to select another date.\\
-&3b.	System restarts use case.\\
+Exceptions:&1.0.E.1 System loses connection to front end(at step 1)\\
+&1. 	System informs Data Analyst that connection has been lost to the server\\
+&2.	Patron reloads page\\
+&3.	System restarts use case.\\
 \hline
 Includes:&None\\
 \hline
 Priority:&High\\
 \hline
-Frequency of Use:&Approximately 400 users, average of one usage per day\\
+Frequency of Use:&Approximately n uses per data set (depends on column inputted)\\
 \hline
-Business Rules:&BR-1, BR-2, BR-3, BR-4, BR-8, BR-11, BR-12, BR-33\\
+Business Rules:&TBD\\
 \hline
 Special Requirements:&
 \begin{packed_enumerate}
