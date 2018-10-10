@@ -1,5 +1,6 @@
 \documentclass[12pt,oneside,letterpaper]{article}
 \usepackage{longtable}
+\usepackage{graphicx}
 %\usepackage{fullpage}
 
 \newenvironment{packed_enumerate}{ %custom enumerate for single-spacing
@@ -90,9 +91,10 @@ Describe the context and origin of the product being specified in this SRS. For 
 \subsection{Product Features}
 Summarize the major features the product contains or the significant functions that it performs or lets the user perform. Details will be provided in Section 3, so only a high level summary  is needed here. Organize the functions to make them understandable to any reader of the SRS. A picture of the major groups of related requirements and how they relate, such as a top level data flow diagram or a class diagram, is often effective.
 \subsection{User Personas}
-\includegraphics[scale = 0.2, angle = 0]{Frank McLaughlin.png}
+This user persona describes a novice data scientist who works in the e-Sports industry, created by Spencer Schurk.
+\newline
+\includegraphics[width = \textwidth]{Frank.png}
 
-Provide several fictitious profiles of individuals who might interact with your system.  Each should give some context identifying their relevant skills and motivations for using the system.  Each should be unique from the others to highlight different modes of use, reasons for use, and challenges.  
 \subsection{User Classes and Characteristics}
 Identify the various user classes that you anticipate will use this product. User classes may be differentiated based on frequency of use, subset of product functions used, technical expertise, security or privilege levels, educational level, or experience. Describe the pertinent characteristics of each user class. Certain requirements may pertain only to certain user classes. Distinguish the favored user classes from those who are less important to satisfy.  You might use a table like this:
 \begin{longtable}{|l|p{3.8in}|}
@@ -120,7 +122,7 @@ List any business rules.  Identify each one uniquely.
 \section{Use Cases}
 
 \subsection{\label{Selecting the Proper Classification from the UIl}Use Case 1: Select Proper Classification Category}
-This use cate details the the path of the data analyst providing feedback to the machine learning algorithm written by Matt Yarmolich
+This use case details the the path of the data analyst providing feedback to the machine learning algorithm written by Matt Yarmolich
 
 \begin{longtable}{|r|p{3.8in}|}
 \hline
@@ -207,7 +209,100 @@ Notes and Issues:&
 \hline
 \end{longtable}
 
-\subsection{\label{Whatever the next one is}Use Case 2: Whatever the next one is}
+
+\subsection{\label{Upload Data Sets}Use Case 2: Upload Data Sets}
+This use case details the the user flow of uploading data sets to the data classifier using the web interface, written by Spencer Schurk.
+
+\begin{longtable}{|r|p{3.8in}|}
+\hline
+Use Case ID:&2\\
+\hline
+Use Case Name:&Upload Data Sets\\
+\hline
+Created By:&Spencer Schurk\\
+\hline
+Last Upadted By:&Spencer Schurk\\
+\hline
+Date Created:&October 10, 2018\\
+\hline
+Date Last Updated:&October 10, 2018\\
+\hline
+Actors:&Data Analyst\\
+\hline
+Description:&After logging in, the system allows a data analyst to upload multiple data sets. After uploading data sets, the data analyst can begin the classification process.\\
+\hline
+Preconditions:&\begin{packed_enumerate}
+\item The data analyst is logged into the system.
+\item The data analyst has not uploaded any data sets.
+\item The data analyst has not began the classification process.
+\end{packed_enumerate}\\
+\hline
+Postconditions:&\begin{packed_enumerate}
+\item All selected data sets have been uploaded.
+\item The data analyst is now able to begin the classification process.
+\end{packed_enumerate}\\
+\hline
+Normal Flow:&1.0 Select multiple files to upload.\newline
+\begin{packed_enumerate}
+\item The data analyst selects "Upload Files" button.
+\item System opens local machine's file explorer / file selector.
+\item Data analyst selects multiple files from their local machine.
+\item Data analyst selects "Ok" or "Upload" on system file explorer.
+\item System displays list of files selected and begins to upload files.
+\item System displays progress of each file being uploaded.
+\item System displays "Upload successful" message after upload completes.
+\item Data analyst selects "Begin Classification" button.
+\end{packed_enumerate}\\
+\hline
+Alternate Flows:&1.1 Select files more than once. (branch after step 4)\newline
+\begin{packed_enumerate}
+\item While previously selected files are uploading, data analyst selects "Upload more files"
+\item System opens local machine's file explorer / file selector.
+\item Data analyst selects multiple files from their local machine.
+\item Data analyst selects "Ok" or "Upload" on system file explorer.
+\item System adds selected files to list of previously selected files that are uploading.
+\item Flow continues on step 8 of normal flow
+\end{packed_enumerate}\\
+\hline
+Exceptions:&1.0.E.1 Data analyst uploads unsupported file. (at step 4)\newline
+\begin{packed_enumerate}
+\item System displays error message, with file name present.
+\item Data analyst selects "OK" button.
+\item System removes selected file from list of files to upload.
+\item System continues to upload other selected files.\newline
+\end{packed_enumerate}
+1.0.E.2 Upload fails for any reason. (at step 5)\newline
+\begin{packed_enumerate}
+\item System displays "Upload failed" message
+\item Data analyst selects "Try again" or "Cancel" button.
+\item If "Try again" is selected, system continues at step 5, with all progress at 0.
+\item If "Cancel" button selected, page is refreshed, and continues at step 1.
+\end{packed_enumerate}\\
+\hline
+Includes:&None\\
+\hline
+Priority&High\\
+\hline
+Frequency of Use:&Once per data classification process.\\
+\hline
+Business Rules:&TBD\\
+\hline
+Special Requirements:&TBD\\
+\hline
+Assumptions:&\begin{packed_enumerate}
+\item Data sets are locally stored on data analyst's machine.
+\item Data analyst has active internet connection capable of uploading files.
+\end{packed_enumerate}\\
+\hline
+Notes and Issues:&\begin{packed_enumerate}
+\item What if the data analyst uploads the wrong file?
+\end{packed_enumerate}\\
+\hline
+\end{longtable}
+
+
+
+\subsection{\label{Whatever the next one is}Use Case 3: Whatever the next one is}
 This is a casual use-case.  Note that there is a label in the LaTeX so you can refer
 to it as being in section~\ref{Whatever the next one is} on page~\pageref{Whatever the next one is}.
 \begin{enumerate}
