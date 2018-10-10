@@ -117,74 +117,62 @@ List any business rules.  Identify each one uniquely.
 
 \section{Use Cases}
 
-\subsection{\label{Order Meal}Use Case 1: Order Meal}
-This is a fully dressed use case taken from Karl Weigers sample.
+\subsection{\label{Selecting the Proper Classification from the UIl}Use Case 1: Select Proper Classification Category}
+This use cate details the the path of the data analyst providing feedback to the machine learning algorithm written by Matt Yarmolich
 
 \begin{longtable}{|r|p{3.8in}|}
 \hline
 Use Case ID:&1\\
 \hline
-Use Case Name:&Order Meal\\
+Use Case Name:&Select Proper Classification Category\\
 \hline
-Created By:&Karl Wiegers\\
+Created By:&Matt Yarmolich\\
 \hline
-Last Updated By:&Jack McGillicutty\\
+Last Updated By:&Matt Yarmolich\\
 \hline
-Date Created:&October 21, 2002\\
+Date Created:&October 9, 2018\\
 \hline
-Date Last Updated:&November 7, 2002\\
+Date Last Updated:&October 9, 2018\\
 \hline
-Actors:&Patron\\
+Actors:&Data Analyst\\
 \hline
-Description:&A Patron accesses the Cafeteria Ordering System from the corporate intranet or from home, optionally views the menu for a specific date, selects food items, and places an order for a meal to be delivered to a specified location within a specified 15-minute time window.\\
+Description:&A Data Analyst accesses the data classification front end by feeding it information from an HTML-5 input tag and having the information parsed by the system. .\\
 \hline
 Preconditions:&
 \begin{packed_enumerate}
-\item Patron is logged into COS.
-\item Patron is registered for meal payments by payroll deduction.
+\item the Data Analyst is logged into the system.
+\item the Data Analyst is a registered user for the system.
+\item the Data Analyst has a dataset that needs to be analyzed.
 \end{packed_enumerate}\\
 \hline
 Postconditions:&
 \begin{packed_enumerate}
-\item Meal order is stored in COS with a status of "accepted".
-\item Inventory of available food items is updated to reflect items in this order.
-\item Remaining delivery capacity for the requested time window is updated to reflect this delivery request.
+\item the dataset has been correctly parsed by the data classifier
+\item the classifier has outputted a variety of tags for verification by the Data Analyst. 
+\item the Data Analyst is capable of correctly identifying the dataset
 \end{packed_enumerate}\\
 \hline
-Normal Flow:&1.0 Order a Single Meal\\
+Normal Flow:&1.0 Select the correct category from the data classifier\\
 &  %line needed for aligning enumeration 
 \begin{packed_enumerate}
-\item Patron asks to view menu for a specified date.
-\item System displays menu of available food items and the daily special.
-\item Patron selects one or more food items from menu.
-\item Patron indicates that meal order is complete.
-\item System displays ordered menu items, individual prices, and total price, including any taxes and delivery charge.
-\item Patron confirms meal order or requests to modify meal order (back to step 3).
-\item System displays available delivery times for the delivery date.
-\item Patron selects a delivery time and specifies the delivery location.
-\item Patron specifies payment method.
-\item System confirms acceptance of the order.
-\item System sends Patron an e-mail confirming order details, price, and delivery instructions.
-\item System stores order in database, sends e-mail to notify Cafeteria Staff, sends food item information to Cafeteria Inventory System, and updates available delivery times.
+\item The Data Analyst uploads the dataset to the front end of the system
+\item System displays upload status
+\item System displays upload complete and feeds the data to the backend
+\item The backend classifies the initial column data
+\item The backend classifies the rest of the data based on past data columns and previous data fed through the system
+\item the backend outputs the results of the data in a web-parsable format (JSON)
+\item The front end parses this output and displays it to the data analyst along with the columns in question
+\item the Data Analyst reviews the data and selects the correct category based on their domain knowledge
+\item The front end feeds their result back to the data classification backend
+\item System displays the correct tagging of the data set
 \end{packed_enumerate}\\
 \hline
-Alternative Flows:&1.1 Order multiple meals (branch after step 4)\\
+Alternative Flows:&1.1 No results from backend (branch after step )\\
 &  %line needed for aligning enumeration 
 \begin{packed_enumerate}
-\item Patron asks to order another meal.
-\item Return to step 2.
-\end{packed_enumerate}\\
-&1.2 Order multiple identical meals (after step 3)\\
-&  %line needed for aligning enumeration 
-\begin{packed_enumerate}
-\item Patron requests a specified number of identical meals.
-\item Return to step 4.
-\end{packed_enumerate}\\
-&1.3. Order the daily special (after step 2)\\
-&  %line needed for aligning enumeration 
-\begin{packed_enumerate}
-\item Patron orders the daily special from the menu.
-\item Return to step 5.
+\item The system outputs no previously learned categories
+\item The Data Analyst inputs a new category for the data set
+\item Return to step 8.
 \end{packed_enumerate}\\
 \hline
 Exceptions:&1.0.E.1 Current time is after order cutoff time (at step 1)\\
