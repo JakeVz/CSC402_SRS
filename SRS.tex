@@ -239,16 +239,22 @@ This feature set will allow the data analyst to interact with the output of the 
 \subsubsection{Stimulus/Response Sequences}
 List the sequences of user actions and system responses that stimulate the behavior defined for this feature. These will correspond to the dialog elements associated with use cases.
 \subsubsection{Functional Requirements}
-Itemize the detailed functional requirements associated with this feature. These are the software capabilities that must be present in order for the user to carry out the services provided by the feature, or to execute the use case. Include how the product should respond to anticipated error conditions or invalid inputs. Requirements should be concise, complete, unambiguous, verifiable, and necessary. Use "TBD" as a placeholder to indicate when necessary information is not yet available.\\
-\\
-Each requirement should be uniquely identified with a sequence number or a meaningful tag of some kind.
-
 \begin{enumerate}
 \item REQ-1: WIP
 \item REQ-2: WIP
 \item REQ-3: WIP
 \end{enumerate}
 
+\subsection{Data Parser}
+\subsubsection{Description and Priority}
+This feature set will allow the data analyst to submit data to the System and parse it into a computer readable interface and parse it into a data structure for storage and analysis. \subsubsection{Stimulus/Response Sequences}
+The data analyst will select a data set to upload to the server. The server will then accept this file and parse the file. During parsing, the computer will store each columns data in separate data structures for analysis. 
+\subsubsection{Functional Requirements}
+\begin{enumerate}
+\item REQ-1: The system shall accept data to be uploaded to the backend
+\item REQ-2: The system shall parse the data, storing each row's data for each column in a separate dynamically growing
+\item REQ-3: The system shall feed the data to the machine learning algorithm
+\end{enumerate}
 
 \section{External Interface Requirements}
 \subsection{User Interfaces}
