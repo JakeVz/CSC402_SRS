@@ -63,7 +63,7 @@ Spencer Schurk&October 10, 2018&Lead Author of Introduction&1.0\\
 \hline
 Geraldo Macias&October 8, 2018&Completion of Other Nonfunctional Requirements&1.0\\
 \hline
-&&&\\
+Spencer Schurk&October 10, 2018&Addition of my User Persona, Use Case, Functional Requirement, and Non-Functinal Requirement&1.0\\
 \hline
 &&&\\
 \hline
@@ -75,11 +75,24 @@ Geraldo Macias&October 8, 2018&Completion of Other Nonfunctional Requirements&1.
 
 \section{Introduction}
 \subsection{Purpose}
-Identify the product whose software requirements are specified in this document, including the revision or release number. Describe the scope of the product that is covered by this SRS, particularly if this SRS describes only part of the system or a single subsystem.
+The purpose of this document is to present the functional and non-functional requirements of our Data Classification application version 1.0. This document also features potential user personas, and fully-dressed use cases of the product. This document serves as a source of reference and guidance during the development process.
+
 \subsection{Document Conventions}
-Describe any standards or typographical conventions that were followed when writing this SRS, such as fonts or highlighting that have special significance. For example, state whether priorities  for higher-level requirements are assumed to be inherited by detailed requirements, or whether every requirement statement is to have its own priority.
+This document is currently not adhering to any conventions. Version 1.1 will adhere to formatting conventions and will be described in this section.
+
 \subsection{Intended Audience and Reading Suggestions}
-Describe the different types of reader that the document is intended for, such as developers, project managers, marketing staff, users, testers, and documentation writers. Describe what the rest of this SRS contains and how it is organized. Suggest a sequence for reading the document, beginning with the overview sections and proceeding through the sections that are most pertinent to each reader type.
+This document was intended for and targeted at the following parties.
+\subsubsection{Developers}
+Developers of this project will use this document as a reference during the development process. Specifically, the Use Cases and Functional Requirements should be referenced the most.\newline
+\textit{Suggested Reading Order}\newline
+\begin{packed_enumerate}
+\item Overall Description
+\item System Features
+\item Functional Requirements
+\item Non-Functional Requirements\newline
+\end{packed_enumerate}
+\subsubsection{Customer - Mark Logic}
+
 \subsection{Project Scope}
 Provide a short description of the software being specified and its purpose, including relevant benefits, objectives, and goals. Relate the software to corporate goals or business strategies. If a separate vision and scope document is available, refer to it rather than duplicating its contents here. An SRS that specifies the next release of an evolving product should contain its own scope statement as a subset of the long-term strategic product vision.
 \subsection{References}
@@ -352,6 +365,7 @@ The data analyst will select a data set to upload to the server. The server will
 \item REQ-1: The system shall accept data to be uploaded to the backend
 \item REQ-2: The system shall parse the data, storing each row's data for each column in a separate dynamically growing
 \item REQ-3: The system shall feed the data to the machine learning algorithm
+\item REQ-4: The system shall be able to accept over 10 data sets to upload at a time. (Written by Spencer Schurk)
 \end{enumerate}
 
 \section{External Interface Requirements}
@@ -370,7 +384,11 @@ The customer has specified that performance is not a concern.
 \subsection{Safety Requirements}
 During the classification stage, safety is not a concern. After the catalog phase we will begin redacting sensitive information.
 \subsection{Security Requirements}
-The software will have two factor authentication and will only allow verified users to access the systems databases.
+\begin{enumerate}
+    \item The software will have two factor authentication and will only allow verified users to access the systems databases.
+    \item The system shall not parse any uploaded data set until the user has selected "Begin Classification." (Written by Spencer Schurk)
+\end{enumerate}
+
 \subsection{Software Quality Attributes}
 \begin{enumerate}
     \item The system shall have a learning curve of 24 hours. This applies to all users ranging from a sports analyst to a data scientist.
