@@ -180,11 +180,28 @@ has been an avid sports fan for his entire life and loves following the numbers 
 \textbf{Job}:Data Company Intern\newline
 \textbf{Bio}:\newline
 \par Chad Chaderson is a Computer Science student, with a minor is data science, at Yale University and began working for a data analyst company the summer after his second year of school. Chad does not know much of what he wants to do with his degrees after college, so he is using the internship as a way to expand his horizons to learn and discover. 
-\par At this internship Chad has been asked to do a lot of chores that the rest of the employees don't want to do. One such task has been to take many files of data that has not been classified into its categories but had no way to do so in a fast and easy way. After a few weeks of manually sorting and classifying data from multiple files that we assigned to him, Chad got fristrated and was contemplating leaving the company and changing his area of concentration. Before he made the decision, Chad, spoke to his boss and learned that there are tools online that may be able to assist him in his work -- this is when Chad found the Data Classifier tool and online GUI.
+\par At this internship Chad has been asked to do a lot of chores that the rest of the employees don't want to do. One such task has been to take many files of data that has not been classified into its categories but had no way to do so in a fast and easy way. After a few weeks of manually sorting and classifying data from multiple files that we assigned to him, Chad got frustrated and was contemplating leaving the company and changing his area of concentration. Before he made the decision, Chad, spoke to his boss and learned that there are tools online that may be able to assist him in his work -- this is when Chad found the Data Classifier tool and online GUI.
 \par Chad found that the entire system worked well with his company's information, and because of his excellent work, he got an offer to come back the following summer.
 
+\subsubsection{Davide Falessi}
+\textbf{Author}: Landon Gerrits\newline
+\textbf{Age}: 37\newline
+\textbf{Job}:Project Manager\newline
+\textbf{Bio}:\newline
+\par Davide is 37 year old project manager from Italy. He works for a data analysis company, Matthew Reason. Davide is a good project manager, in fact he's highly technical. He began his career and a software engineer specifically working in data science. He now is a project manager for the data science division of his company. Davide interfaces often interfaces with the business of the company. The business often asks Davide to provide high level data sheets that show the final output of Davide's team's classification algorithms.
+\par Last year, Matthew Reason had many clients from the sports industry, specifically soccer. Many major news networks contacted Matthew Reason to analyze and filter their data based around player statistics. Davide's team was tasked with creating a program that could rapidly classify and sort this player data.
+\par Davide's team was underfunded to have enough man power to create this program. Davide's team was already working on 4 other important projects for the company. While researching this problem, he found a data classifier that did exactly this. Davide purchased this program and it was downloaded and installed in a matter of minutes. Davide read the documentation and imported a data set with player stats. He ran the program and moments later he received an output file that classified player names, countries, and many other valuable classifications. Davide showed this to the business and they were thrilled that he was able to get these data classifications with such a short turnaround.
 
 
+\subsubsection{Mantis Tobaggon}
+\textbf{Author}: Geraldo Macias\newline
+\textbf{Age}: 60\newline
+\textbf{Job}:Financial Investor\newline
+\textbf{Bio}:\newline
+\par At one time Mantis was a failing financial investor but began to learn data analytics. After experimenting with different techniques, Mantis became a power house of an investor on Wall Street. Now Mantis looks to diversify and use his data science knowledge to place wise bets in the sports industry.
+
+
+\newpage
 \subsection{User Classes and Characteristics}
 \begin{longtable}{|l|p{3.8in}|}
 \hline
@@ -584,6 +601,80 @@ Notes and Issues:&\begin{packed_enumerate}
 \hline
 \end{longtable}
 
+\subsection{\label{Upload Data Sets}Use Case 5: Exporting data and logs}
+
+\begin{longtable}{|r|p{3.8in}|}
+\hline
+Use Case ID:&5\\
+\hline
+Use Case Name:&Export Data\\
+\hline
+Created By:&Landon Gerrits\\
+\hline
+Last Updated By:&Landon Gerrits\\
+\hline
+Date Created:&October 10, 2018\\
+\hline
+Date Last Updated:&October 10, 2018\\
+\hline
+Actors:&Data Analyst and Project Managers\\
+\hline
+Description:&After the system has run and classified its data input, it is ready to be exported. Data analysts and project managers can choose to export this data to specified file types.\\
+\hline
+Preconditions:&\begin{packed_enumerate}
+\item The user is logged into the system.
+\item The user has uploaded a data set
+\item The user has run the classification process.
+\item The classification process has been completed.
+\end{packed_enumerate}\\
+\hline
+Postconditions:&\begin{packed_enumerate}
+\item All selected data sets have been uploaded.
+\item The classification process has been completed.
+\end{packed_enumerate}\\
+\hline
+Normal Flow:&1.0 Select expected file type output.\newline
+\begin{packed_enumerate}
+\item The user uploads their data sets.
+\item The data is processed by the classifier.
+\item As the data is going through classifications, each classification is being logged 
+\item When the data is done being classified, the logs will have available the input, output, and status logs
+\item The user can view the classifications in the program's GUI
+\item The user can select the specified file output type: .JSON, .CSV, .XML
+\end{packed_enumerate}\\
+\hline
+Alternate Flows:&1.1 User chooses not to export a classified file\newline
+\begin{packed_enumerate}
+\item User runs the program
+\item User chooses not to export file (usually due to inadequate data classification)
+\end{packed_enumerate}\\
+\hline
+Exceptions:&1.0.E.1 Data analyst selects .CSV\newline
+\begin{packed_enumerate}
+\item User selects .CSV file type for export (Comma Separated Value documents do not work well with grouped sets the JSON and XML can handle)
+\item User selects a location to put the file
+\item The system exports a .zip file that contains a folder of .CSV files for each classification 
+\end{packed_enumerate}\\
+\hline
+Includes:&None\\
+\hline
+Priority&Medium\\
+\hline
+Frequency of Use:&Once per data classification process.\\
+\hline
+Business Rules:&TBD\\
+\hline
+Special Requirements:&TBD\\
+\hline
+Assumptions:&\begin{packed_enumerate}
+\item Data set is large enough to be classified (minimum several hundred entries)
+\end{packed_enumerate}\\
+\hline
+Notes and Issues:&\begin{packed_enumerate}
+\item Supporting multiple export file types will be time consuming for developers. A single file type may be desirable if there are higher priorities for the project
+\end{packed_enumerate}\\
+\hline
+\end{longtable}
 
 \subsection{\label{Upload Data Sets}Use Case 6: Account Creation}
 
