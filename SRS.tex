@@ -1,6 +1,7 @@
 \documentclass[12pt,oneside,letterpaper]{article}
 \usepackage{longtable}
 \usepackage{graphicx}
+\usepackage[nogroupskip]{glossaries}
 \usepackage{hyperref}
 %\usepackage{fullpage}
 
@@ -16,6 +17,24 @@
 \pagestyle{headings}
 \oddsidemargin 0.25in \textwidth     6.25in \topmargin     0.4in
 \textheight    8.5in
+
+
+%This is for adding things to the glossary. Will Automatically be alphabetical order.
+% NOTE: IN ORDER FOR THE ITEM TO APPEAR IN GLOSSARY, YOU MUST USE "\gls{[name of entry]}" so that the glossary can put a page number of where it is
+\newglossaryentry{example}
+{ name=test entry,
+  description={This is the definition of the word},
+  sort={0}
+  }
+  
+\newglossaryentry{example2}
+{ name=test entry2,
+  description={This is the definition of the word},
+  sort={0}
+  }
+
+\makenoidxglossaries
+
 
 \begin{document}
 
@@ -53,6 +72,7 @@ Matt Yarmolich&October 9, 2018&Lead Author of System Features&1.0\\
 \hline
 Spencer Schurk&October 10, 2018&Lead Author of Introduction&1.0\\
 \hline
+Jake Veazey&October 10, 2018&Maintains Document and glossary. Assisted on Front End System Features&1.0\\
 Brad Foster&October 10, 2018&Lead Author of Overall Description&1.0\\
 \hline
 &&&\\
@@ -68,8 +88,8 @@ Geraldo Macias&October 8, 2018&Completion of Other Nonfunctional Requirements&1.
 \hline
 Spencer Schurk&October 10, 2018&Addition of my User Persona, Use Case, Functional Requirement, and Non-Functinal Requirement&1.0\\
 \hline
+Jake Veazey&October 10, 2018&Addition of Front end system reqs, Use Case, User Persona, clean up/add glossary&1.0\\
 Spencer Schurk&October 10, 2018&Completion of Introduction&1.0\\
-\hline
 Brad Foster&October 10, 2018&Completion of Overall Description&1.0\\
 \hline
 &&&\\
@@ -150,6 +170,17 @@ has been an avid sports fan for his entire life and loves following the numbers 
 \par Bread Feuyser is a 27 year old Music Data analyst working for a major record label. Bread has been a passionate music fan for his entire childhood, adolescence, and adult life. He found his way into the music data industry when he realized that he had an unusual ability to make sense out of seemingly meaningless and nonsensical data. 
 \par Bread is a Third Degree Supreme-Master class data analyst, but has trouble listening to music while grooming data during the pre-analysis phase. Any sort of mis-classification or other kind of organizational mistake completely throws off his rhythm. This consequently adversely affects his ability to "connect" with the music he is listening to, which ultimately leads to drastic reductions in his productivity. Bread's main strength is his ability to make wild and unconventional connections between musical data sets, and this ability is fueled by his unrivaled love for "sick beats" and "clean mixes" (sic).
 \par Seeming as though The Hand of God reached down and personally delivered it to him, Bread one day stumbled upon a data classifier that had the perfect set of features to solve all of his data problems. It allowed him to feed it various disorganized data sets and turn them into a single, coheisve, analysis-ready database. It even had a web based interface with buttons that Bread could click in sync with the music he was listening to. The musical world will continue to be changed, though now at an even faster rate, by Bread's groundbreaking discoveries.\newline
+
+\subsubsection{Chad Chaderson}
+\textbf{Author}: Jake Veazey\newline
+\textbf{Age}: 19\newline
+\textbf{Job}:Data Company Intern\newline
+\textbf{Bio}:\newline
+\par Chad Chaderson is a Computer Science student, with a minor is data science, at Yale University and began working for a data analyst company the summer after his second year of school. Chad does not know much of what he wants to do with his degrees after college, so he is using the internship as a way to expand his horizons to learn and discover. 
+\par At this internship Chad has been asked to do a lot of chores that the rest of the employees don't want to do. One such task has been to take many files of data that has not been classified into its categories but had no way to do so in a fast and easy way. After a few weeks of manually sorting and classifying data from multiple files that we assigned to him, Chad got fristrated and was contemplating leaving the company and changing his area of concentration. Before he made the decision, Chad, spoke to his boss and learned that there are tools online that may be able to assist him in his work -- this is when Chad found the Data Classifier tool and online GUI.
+\par Chad found that the entire system worked well with his company's information, and because of his excellent work, he got an offer to come back the following summer.
+
+
 
 \subsection{User Classes and Characteristics}
 \begin{longtable}{|l|p{3.8in}|}
@@ -580,15 +611,25 @@ Each requirement should be uniquely identified with a sequence number or a meani
 
 \subsection{Data Classification Front End}
 \subsubsection{Description and Priority}
-This feature set will allow the data analyst to interact with the output of the machine learning algorithm for further classification and viewing of what the algorithm outputs. This feature set is another high priority feature as it allows our algorithm to be interacted with by the client and provide meaningful responses to help further teach the algorithm about new datasets and expectations. 
+This feature set will allow the data analyst to interact with the output of the machine learning algorithm for further classification and viewing of what the algorithm outputs. This feature set is another high priority feature as it allows our algorithm to be interacted with by the client and provide meaningful responses to help further teach the algorithm about new datasets and expectations. In addition, the user will be given download options of their initial input file and the output of the classifier with logs completed with timestamps as the file(s) move through the classifier.
 \subsubsection{Stimulus/Response Sequences}
-List the sequences of user actions and system responses that stimulate the behavior defined for this feature. These will correspond to the dialog elements associated with use cases.
+Users will be able to navigate the site using the front end and its linkage to the system and backend to perform the tasks necessary
 \subsubsection{Functional Requirements}
 \begin{enumerate}
-\item REQ-1: WIP
-\item REQ-2: WIP
-\item REQ-3: WIP
+\item REQ-1: User Uploads data set(s) after pressing the upload button
+\begin{itemize}
+    \item Each data set uploaded is timestamped by the system
+    \item Each set is added to a FIFO queue for processing
+    \item First set is checked for compliance and then computed. Else fails
+    \item Output is stored in User's storage (AWS S3)
+\end{itemize}
+\item REQ-2: User requests the Output or Input of the the classifier
+\begin{itemize}
+    \item Cloud storage is accessed by the backend and then provided to the user
+    \item Storage is only accessable by the service for security purposes
+\end{itemize}
 \end{enumerate}
+Written by Jake Veazey
 
 \subsection{Data Parser}
 \subsubsection{Description and Priority}
@@ -636,15 +677,38 @@ During the classification stage, safety is not a concern. After the catalog phas
 
 
 \section{Other Requirements}
-Define any other requirements not covered elsewhere in the SRS. This might include database requirements, internationalization requirements, legal requirements, reuse objectives for the project, and so on. Add any new sections that are pertinent to the project.
+\begin{itemize}
+    \item Example Req
+    \begin{itemize}
+        \item Example description
+    \end{itemize}
+    \item Example Req
+    \begin{itemize}
+        \item Example description
+    \end{itemize}
+\end{itemize}
 
 \appendix
-\section{Glossary}
-Define all the terms necessary to properly interpret the SRS, including acronyms and abbreviations. You may wish to build a separate glossary that spans multiple projects or the entire organization, and just include terms specific to a single project in each SRS.
 
 \section{Analysis Models}
 Optionally, include any pertinent analysis models, such as data flow diagrams, class diagrams, state-transition diagrams, or entity-relationship diagrams.
 
 \section{Issues List}
-This is a dynamic list of the open requirements issues that remain to be resolved, including TBDs, pending decisions, information that is needed, conflicts awaiting resolution, and the like.
+\begin{itemize}
+    \item Example Ticket 1
+    \begin{itemize}
+        \item Example description
+    \end{itemize}
+    \item Example Ticket 2
+    \begin{itemize}
+        \item Example description
+    \end{itemize}
+\end{itemize}
+
+
+\gls{example} \gls{example2}
+
+\printnoidxglossary[sort=standard]
+
 \end{document}
+
