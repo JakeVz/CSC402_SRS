@@ -100,9 +100,9 @@ List any other documents or Web addresses to which this SRS refers. These may in
 
 \section{Overall Description}
 \subsection{Product Perspective}
-Describe the context and origin of the product being specified in this SRS. For example, state whether this product is a follow-on member of a product family, a replacement for certain existing systems, or a new, self-contained product. If the SRS defines a component of a larger system, relate the requirements of the larger system to the functionality of this software and identify interfaces between the two. A simple diagram that shows the major components of the overall system, subsystem interconnections, and external interfaces can be helpful.
+One of the biggest unsolved roadblocks for data scientists is data sanitization and grooming. Data scientists spend excessive amounts of time preparing data before even being able to do productive work. Eliminating this downtime would allow more room for data scientists to do the meaningful work that they actually want to do. Our application aims to do just this. Through the use of machine learning techniques and a robust web interface, our application will take various ungroomed data sets as input and will convert them into cohesive, organized documents as output. We want to make the process of pre-analysis data grooming as automated and painless as possible. 
 \subsection{Product Features}
-Summarize the major features the product contains or the significant functions that it performs or lets the user perform. Details will be provided in Section 3, so only a high level summary  is needed here. Organize the functions to make them understandable to any reader of the SRS. A picture of the major groups of related requirements and how they relate, such as a top level data flow diagram or a class diagram, is often effective.
+The primary feature of the application is that it will be able to take data from various different "silos" and automatically make meaningful, organized categories out of them. The program will be robust enough to make sense out of data that is unconventionally or even improperly formatted. The application will also have a web interface that data scientists will be able to interact with.
 \subsection{User Personas}
 \subsubsection{Frank McLaughlin}
 \textbf{Author}: Spencer Schurk\newline
@@ -118,27 +118,25 @@ Summarize the major features the product contains or the significant functions t
 Written by Matt Yarmolich
 
 \subsection{User Classes and Characteristics}
-Identify the various user classes that you anticipate will use this product. User classes may be differentiated based on frequency of use, subset of product functions used, technical expertise, security or privilege levels, educational level, or experience. Describe the pertinent characteristics of each user class. Certain requirements may pertain only to certain user classes. Distinguish the favored user classes from those who are less important to satisfy.  You might use a table like this:
 \begin{longtable}{|l|p{3.8in}|}
 \hline
 \textbf{User Class}&\textbf{Description}\\
 \hline
-Employee&This is a description of an employee\\
+Developer&The Developer will design, implement,\newline test, and maintain the application.\\
 \hline
-Administrator&This is a description of an administrator\\
+Data Scientist with programming knowledge&A Data Scientist that will require\newline advanced technical features from \newline the application.\\
+\hline
+Data Scientist without programming knowledge&A Data Scientist that will require\newline a simplistic interface and feature set \newline from the application.\\
 \hline
 \end{longtable}
-
 \subsection{Operating Environment}
-Describe the environment in which the software will operate, including the hardware platform, operating system and versions, and any other software components or applications with which it must peacefully coexist.
+The program will exist as a web based application.
 \subsection{Design and Implementation Constraints}
-Describe any items or issues that will limit the options available to the developers. These might include: corporate or regulatory policies; hardware limitations (timing requirements, memory requirements); interfaces to other applications; specific technologies, tools, and databases to be used; parallel operations; language requirements; communications protocols; security considerations; design conventions or programming standards (for example, if the customer's organization will be responsible for maintaining the delivered software).
+The back end/machine learning parts of the application will have to be written in Python. Our application also must implement a web based interface.
 \subsection{User Documentation}
-List the user documentation components (such as user manuals, on-line help, and tutorials) that will be delivered along with the software. Identify any known user documentation delivery formats or standards.
+During implementation, we will be monitoring issues through the use of JIRA. We will likely intend to include some simple documentation for using the user interface along with the application. 
 \subsection{Assumptions and Dependencies}
-List any assumed factors (as opposed to known facts) that could affect the requirements stated in the SRS. These could include third-party or commercial components that you plan to use, issues around the development or operating environment, or constraints. The project could be affected if these assumptions are incorrect, are not shared, or change. Also identify any dependencies the project has on external factors, such as software components that you intend to reuse from another project, unless they are already documented elsewhere (for example, in the vision and scope document or the project plan).
-\subsection{Business Rules}
-List any business rules.  Identify each one uniquely.
+We are assuming that we will easily be able to integrate a database solution (i.e. MongoDB) into our application during development. In addition, we are assuming that we will be able to find a well documented machine learning technique for classifying the data categories. Finally, we are assuming that we will be able to use something like Google Firebase for our web app development.
 
 
 \section{Use Cases}
