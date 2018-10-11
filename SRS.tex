@@ -792,13 +792,27 @@ The data analyst will select a data set to upload to the server. The server will
 
 \section{External Interface Requirements}
 \subsection{User Interfaces}
-Describe the logical characteristics of each interface between the software product and the users. This may include sample screen images, any GUI standards or product family style guides that are to be followed, screen layout constraints, standard buttons and functions (e.g., help) that will appear on every screen, keyboard shortcuts, error message display standards, and so on. Define the software components for which a user interface is needed. Details of the user interface design should be documented in a separate user interface specification.
+This system has a web application with an interact-able web GUI. The web interface for the initial release will scale on all desktop web browsers. A mobile friendly web interface may be available in future releases. Upon visiting the site, the user is presented with a login screen. After logging in, the user is given the option to import one or more data sets. This will be done by clicking a button called "Import Data Set". The user may select one or more data sets of the appropriate file type from their local machine. 
+
+There will be a button to confirm the file selections. There will be a button to confirm upload and a screen that shows the progress of the file upload.
+
+The user will then be greeted with another screen explaining the data classification process. This screen has a diagram of the entire pipepline of the process: File Import - Data Classifier - Output to user - User edits - File Output
+
+There is a button titled "Begin Data Classification" that will have a progress indicator while the data is being processed. 
+
+The following screen will display the data set with it's classifications. The user will have the ability to edit the names of the classifications by clicking on each of the classsifier fields.
+
 \subsection{Hardware Interfaces}
-Describe the logical and physical characteristics of each interface between the software product and the hardware components of the system. This may include the supported device types, the nature of the data and control interactions between the software and the hardware, and communication protocols to be used.
+For the prototype the system will run off a user's local machine. The computer must have at least 8gb of ram to run efficiently. In the future the program will be hosted on a website and all of the computation processing will be done on Mark Logic's server machines.
 \subsection{Software Interfaces}
-Describe the connections between this product and other specific software components (name and version), including databases, operating systems, tools, libraries, and integrated commercial components. Identify the data items or messages coming into the system and going out and describe the purpose of each. Describe the services needed and the nature of communications. Refer to documents that describe detailed application programming interface protocols. Identify data that will be shared across software components. If the data sharing mechanism must be implemented in a specific way (for example, use of a global data area in a multitasking operating system), specify this as an implementation constraint.
+There is still muchh to be determined for what will be used for software interfaces. Items that have not been decided upon: operating system, libraries, database, and other potential components.
+
+It is possible that Google Firebase will store our data before and after processing.
 \subsection{Communications Interfaces}
-Describe the requirements associated with any communications functions required by this product, including e-mail, web browser, network server communications protocols, electronic forms, and so on. Define any pertinent message formatting. Identify any communication standards that will be used, such as FTP or HTTP. Specify any communication security or encryption issues, data transfer rates, and synchronization mechanisms.
+Communication requirements are undefined at this point. The system will have a web interface and allow the user to upload and download various file types. 
+
+\item (Written by Landon Gerrits)
+
 
 \section{Other Nonfunctional Requirements}
 \subsection{Performance Requirements}
