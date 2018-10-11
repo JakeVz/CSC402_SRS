@@ -597,73 +597,59 @@ Notes and Issues:&\begin{packed_enumerate}
 
 \begin{longtable}{|r|p{3.8in}|}
 \hline
-Use Case ID:&4\\
+Use Case ID:&6\\
 \hline
-Use Case Name:&Upload Data Sets\\
+Use Case Name:&Account Creation\\
 \hline
-Created By:&Jake Veazey\\
+Created By:&Geraldo Macias\\
 \hline
-Last Updated By:&Jake Veazey\\
+Last Updated By:&Geraldo Macias\\
 \hline
 Date Created:&October 10, 2018\\
 \hline
 Date Last Updated:&October 10, 2018\\
 \hline
-Actors:&Data Analyst\\
+Actors:&Data Analyst, System Administrator\\
 \hline
-Description:&After logging in, the system allows a data analyst to upload multiple data sets. After uploading data sets, the data analyst can begin the classification process. Each step of the classification process will be noted and time logged. The Logs page will provide original input and classified output for all data sets uploaded.\\
+Description:&Before the system can start to perform analytics, the user needs to create an account. It is important that only the data analyst may view the data.Two types of accounts can be created, a data analyst, and a system administrator\\
 \hline
 Preconditions:&\begin{packed_enumerate}
-\item The data analyst is logged into the system.
-\item The data analyst has just uploaded a data set
-\item The data analyst has just begun the classification process.
+\item The system must be installed.
+\item If a Data Analyst account is being created, a System Administrator must already exist.
 \end{packed_enumerate}\\
 \hline
-Postconditions:&\begin{packed_enumerate}
-\item All selected data sets have been uploaded.
-\item The classification process has been completed.
-\item All uploaded data sets are displayed with outputs and timestamps in the logs.
-\end{packed_enumerate}\\
+Postconditions:&A System Administrator must approve a new Data Analyst account before it may be accessed.\\
 \hline
-Normal Flow:&1.0 Select multiple files to upload.\newline
+Normal Flow:&1.0 New account accepted.\newline
 \begin{packed_enumerate}
-\item The data analyst uploads their data sets.
-\item The data beings to be classified
-\item As the data is going through classifications, each step is being logged to show user status
-\item When the data is done being classified, the logs will have available the input, output, and status logs
+\item A System Administrator has been established.
+\item A Data Analyst or System Administrator creates an account.
+\item An approved System Administrator approves the new account.
+\item Data Analyst now has access to companies data and our product Or System Administrator can approve/deny future account creations.
 \end{packed_enumerate}\\
 \hline
-Alternate Flows:&1.1 User uploads more than one file. (branch after step 4)\newline
+Alternate Flows:&1.1 New account denied. (branch after step 2)\newline
 \begin{packed_enumerate}
-\item Each uploaded file will enter a queue
-\item While queue is not empty, continue Normal Flow
+\item A System Administrator denies the new account.
+\item The new account is deleted.
 \end{packed_enumerate}\\
 \hline
-Exceptions:&1.0.E.1 Data analyst uploads a supported file, but incompatible data. (at step 3)\newline
-\begin{packed_enumerate}
-\item While the data set(s) the user uploaded are being classified the process fails
-\item This can be due to incompatible information or incorrect files
-\item The logger will display the failed status and attempt to show the reason the classification failed.
-\end{packed_enumerate}\\
+Exceptions:&1.0.E.1 A System Administrator accidentally approves an account (at step 3).\newline
+The account is deleted.\\
 \hline
 Includes:&None\\
 \hline
 Priority&Medium\\
 \hline
-Frequency of Use:&Once per data classification process.\\
+Frequency of Use:&Once per new user.\\
 \hline
 Business Rules:&TBD\\
 \hline
 Special Requirements:&TBD\\
 \hline
-Assumptions:&\begin{packed_enumerate}
-\item Data sets are locally stored on data analyst's machine.
-\item Data analyst has active internet connection capable of uploading files.
-\end{packed_enumerate}\\
+Assumptions:&The System Administrator has access to the system first.\\
 \hline
-Notes and Issues:&\begin{packed_enumerate}
-\item Check for all errors at each step in the classification process
-\end{packed_enumerate}\\
+Notes and Issues:&Ensure the customer hands the software to the System Administrator first\\
 \hline
 \end{longtable}
 
