@@ -122,7 +122,16 @@ The primary feature of the application is that it will be able to take data from
 \par Brian Fuego is a 25 year old Sports Data Analyst working for the Seattle Seahawks. He
 has been an avid sports fan for his entire life and loves following the numbers and figuring out threats on the field for his team. His dad really wanted him to be a football player, but he was never good enough to play on any competitive team.
 \par Thanks to his father?s drive, he has been able to push himself into fields that he believed would make his father proud. Thus he began a career as a data analyst for his dad (and his) favorite sports team. Unfortunately, Dave is getting sick of doing his job week by week and wants tools to help make his job go by faster so he has more time doing his actual passion, coding.
-\par Through his relentless search for tools, Dave has found the data classifier with a GUI that helps make his job way easier. He likes that it uses the newest trends in computing (machine learning) and that it has GUI for ease of use to make his job go by faster. Dave plans on implementing this technology so that he has more time to do his passion and work on creating games written in OpenGl and c++ since that is his bread and butter and what he likes doing the most in this world
+\par Through his relentless search for tools, Dave has found the data classifier with a GUI that helps make his job way easier. He likes that it uses the newest trends in computing (machine learning) and that it has GUI for ease of use to make his job go by faster. Dave plans on implementing this technology so that he has more time to do his passion and work on creating games written in OpenGl and c++ since that is his bread and butter and what he likes doing the most in this world.\newline
+
+\subsubsection{Bread Feuyser}
+\textbf{Author}: Brad Foster\newline
+\textbf{Age}: 27\newline
+\textbf{Job}:Music Data Analyst\newline
+\textbf{Bio}:\newline
+\par Bread Feuyser is a 27 year old Music Data analyst working for a major record label. Bread has been a passionate music fan for his entire childhood, adolescence, and adult life. He found his way into the music data industry when he realized that he had an unusual ability to make sense out of seemingly meaningless and nonsensical data. 
+\par Bread is a Third Degree Supreme-Master class data analyst, but has trouble listening to music while grooming data during the pre-analysis phase. Any sort of mis-classification or other kind of organizational mistake completely throws off his rhythm. This consequently adversely affects his ability to "connect" with the music he is listening to, which ultimately leads to drastic reductions in his productivity. Bread's main strength is his ability to make wild and unconventional connections between musical data sets, and this ability is fueled by his unrivaled love for "sick beats" and "clean mixes" (sic).
+\par Seeming as though The Hand of God reached down and personally delivered it to him, Bread one day stumbled upon a data classifier that had the perfect set of features to solve all of his data problems. It allowed him to feed it various disorganized data sets and turn them into a single, coheisve, analysis-ready database. It even had a web based interface with buttons that Bread could click in sync with the music he was listening to. The musical world will continue to be changed, though now at an even faster rate, by Bread's groundbreaking discoveries.\newline
 
 \subsection{User Classes and Characteristics}
 \begin{longtable}{|l|p{3.8in}|}
@@ -324,6 +333,124 @@ Assumptions:&\begin{packed_enumerate}
 Notes and Issues:&\begin{packed_enumerate}
 \item What if the data analyst uploads the wrong file?
 \end{packed_enumerate}\\
+\hline
+\end{longtable}
+
+\subsection{\label{Log In}Use Case 3: Log In}
+This use case details the flow of logging into the application, written by Brad Foster.
+
+\begin{longtable}{|r|p{3.8in}|}
+\hline
+Use Case ID:&3\\
+\hline
+Use Case Name:&Log In\\
+\hline
+Created By:&Brad Foster\\
+\hline
+Last Upadted By:&Brad Foster\\
+\hline
+Date Created:&October 10, 2018\\
+\hline
+Date Last Updated:&October 10, 2018\\
+\hline
+Actors:&Data Analyst\\
+\hline
+Description:&The user must log into their account before accessing the app's features.\\
+\hline
+Preconditions:&\begin{packed_enumerate}
+\item The data analyst is not logged into the system.
+\item The data analyst has the application open.
+\end{packed_enumerate}\\
+\hline
+Postconditions:&\begin{packed_enumerate}
+\item The data analyst is now logged in.
+\end{packed_enumerate}\\
+\hline
+Normal Flow:&1.0 Log In Successfully.\newline
+\begin{packed_enumerate}
+\item The data analyst opens the application.
+\item System prompts the user for their username and password.
+\item Data analyst inputs their username and password.
+\item System verifies their credentials.
+\item System displays the application's main screen.
+\end{packed_enumerate}\\
+\hline
+Alternate Flows:&1.1 Log in Failed (branch after step 3)\newline
+\begin{packed_enumerate}
+\item System detects that there is a mistmatch between username and password.
+\item System displays an appropriate error.
+\item System prompts the user for their username and password again.
+\end{packed_enumerate}\\
+\hline
+Includes:&None\\
+\hline
+Priority&High\\
+\hline
+Frequency of Use:&Once per launch of the application.\\
+\hline
+Business Rules:&TBD\\
+\hline
+Special Requirements:&TBD\\
+\hline
+Assumptions:&\begin{packed_enumerate}
+\item Account credentials can be securely stored.
+\end{packed_enumerate}\\
+\hline
+Notes and Issues:&TBD\\
+\hline
+\end{longtable}
+
+\subsection{\label{Log In}Use Case 4: Log Out}
+This use case details the flow of logging out of the application, written by Brad Foster.
+
+\begin{longtable}{|r|p{3.8in}|}
+\hline
+Use Case ID:&4\\
+\hline
+Use Case Name:&Log Out\\
+\hline
+Created By:&Brad Foster\\
+\hline
+Last Upadted By:&Brad Foster\\
+\hline
+Date Created:&October 10, 2018\\
+\hline
+Date Last Updated:&October 10, 2018\\
+\hline
+Actors:&Data Analyst\\
+\hline
+Description:&The user must log out of their account once they are done using the application.\\
+\hline
+Preconditions:&\begin{packed_enumerate}
+\item The data analyst is logged into the system.
+\item The data analyst has the application open.
+\end{packed_enumerate}\\
+\hline
+Postconditions:&\begin{packed_enumerate}
+\item The data analyst is now logged out.
+\item The System is now showing the log in screen.
+\end{packed_enumerate}\\
+\hline
+Normal Flow:&1.0 Log Out Successfully.\newline
+\begin{packed_enumerate}
+\item The data analyst clicks the log out button.
+\item System closes the main screen and displays the log in screen.
+\item System displays a successful log out message.
+\end{packed_enumerate}\\
+\hline
+Includes:&None\\
+\hline
+Priority&High\\
+\hline
+Frequency of Use:&Once per login session.\\
+\hline
+Business Rules:&TBD\\
+\hline
+Special Requirements:&TBD\\
+\hline
+Assumptions:&TBD\\
+\hline
+Notes and Issues:&TBD\\
 \hline
 \end{longtable}
 
