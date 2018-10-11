@@ -1,5 +1,6 @@
 \documentclass[12pt,oneside,letterpaper]{article}
 \usepackage{longtable}
+\usepackage{graphicx}
 %\usepackage{fullpage}
 
 \newenvironment{packed_enumerate}{ %custom enumerate for single-spacing
@@ -29,7 +30,7 @@ version 1.0}
 \emph{San Luis Obispo, CA USA}\\
 }
 
-\date{October 10, 2017}
+\date{October 10, 2018}
 \maketitle \thispagestyle{empty}
 
 
@@ -49,7 +50,7 @@ Geraldo Macias&October 9, 2018&Lead Author of Other Nonfucntional Requirements&1
 \hline
 Matt Yarmolich&October 9, 2018&Lead Author of System Features&1.0\\
 \hline
-&&&\\
+Spencer Schurk&October 10, 2018&Lead Author of Introduction&1.0\\
 \hline
 &&&\\
 \hline
@@ -62,7 +63,7 @@ Matt Yarmolich&October 9, 2018&Lead Author of System Features&1.0\\
 \hline
 Geraldo Macias&October 8, 2018&Completion of Other Nonfunctional Requirements&1.0\\
 \hline
-&&&\\
+Spencer Schurk&October 10, 2018&Addition of my User Persona, Use Case, Functional Requirement, and Non-Functinal Requirement&1.0\\
 \hline
 &&&\\
 \hline
@@ -74,11 +75,24 @@ Geraldo Macias&October 8, 2018&Completion of Other Nonfunctional Requirements&1.
 
 \section{Introduction}
 \subsection{Purpose}
-Identify the product whose software requirements are specified in this document, including the revision or release number. Describe the scope of the product that is covered by this SRS, particularly if this SRS describes only part of the system or a single subsystem.
+The purpose of this document is to present the functional and non-functional requirements of our Data Classification application version 1.0. This document also features potential user personas, and fully-dressed use cases of the product. This document serves as a source of reference and guidance during the development process.
+
 \subsection{Document Conventions}
-Describe any standards or typographical conventions that were followed when writing this SRS, such as fonts or highlighting that have special significance. For example, state whether priorities  for higher-level requirements are assumed to be inherited by detailed requirements, or whether every requirement statement is to have its own priority.
+This document is currently not adhering to any conventions. Version 1.1 will adhere to formatting conventions and will be described in this section.
+
 \subsection{Intended Audience and Reading Suggestions}
-Describe the different types of reader that the document is intended for, such as developers, project managers, marketing staff, users, testers, and documentation writers. Describe what the rest of this SRS contains and how it is organized. Suggest a sequence for reading the document, beginning with the overview sections and proceeding through the sections that are most pertinent to each reader type.
+This document was intended for and targeted at the following parties.
+\subsubsection{Developers}
+Developers of this project will use this document as a reference during the development process. Specifically, the Use Cases and Functional Requirements should be referenced the most.\newline
+\textit{Suggested Reading Order}\newline
+\begin{packed_enumerate}
+\item Overall Description
+\item System Features
+\item Functional Requirements
+\item Non-Functional Requirements\newline
+\end{packed_enumerate}
+\subsubsection{Customer - Mark Logic}
+
 \subsection{Project Scope}
 Provide a short description of the software being specified and its purpose, including relevant benefits, objectives, and goals. Relate the software to corporate goals or business strategies. If a separate vision and scope document is available, refer to it rather than duplicating its contents here. An SRS that specifies the next release of an evolving product should contain its own scope statement as a subset of the long-term strategic product vision.
 \subsection{References}
@@ -88,7 +102,25 @@ List any other documents or Web addresses to which this SRS refers. These may in
 \subsection{Product Perspective}
 One of the biggest unsolved roadblocks for data scientists is data sanitization and grooming. Data scientists spend excessive amounts of time preparing data before even being able to do productive work. Eliminating this downtime would allow more room for data scientists to do the meaningful work that they actually want to do. Our application aims to do just this. Through the use of machine learning techniques and a robust web interface, our application will take various ungroomed data sets as input and will convert them into cohesive, organized documents as output. We want to make the process of pre-analysis data grooming as automated and painless as possible. 
 \subsection{Product Features}
+<<<<<<< HEAD
 The primary feature of the application is that it will be able to take data from various different "silos" and automatically make meaningful, organized categories out of them. The program will be robust enough to make sense out of data that is unconventionally or even improperly formatted. The application will also have a web interface that data scientists will be able to interact with. 
+=======
+Summarize the major features the product contains or the significant functions that it performs or lets the user perform. Details will be provided in Section 3, so only a high level summary  is needed here. Organize the functions to make them understandable to any reader of the SRS. A picture of the major groups of related requirements and how they relate, such as a top level data flow diagram or a class diagram, is often effective.
+\subsection{User Personas}
+\subsubsection{Frank McLaughlin}
+\textbf{Author}: Spencer Schurk\newline
+\textbf{Age}: 24\newline
+\textbf{Job}: Data Scientist\newline
+\textbf{Bio}:\newline
+\par Frank McLaughlin is a 24 year old data scientist working for a large e-Sports company. Frank has been interested in video games from a very young age, and this interest has helped shape his life and influence his friends. His parents never appreciated his video game obsession, but Frank didn't let that stop him.
+\par Frank graduated from UC Irvine with a bachelor's degree in Computer Science. After graduating, Frank worked at a startup for a delivery app. He was assigned data analysis tasks, but they were very basic. Frank did not like this job at the startup very much, as he felt it was too fast paced with very little organization. Everbody was stepping on everyone else's feet. Eventually, it was time for Frank to find a new job.
+\par Frank then found a job at a major e-Sports company. Here, he was also hired as a data analyst. He likes working at this new company a lot better, since they use better tools and he can be more efficient. However, the data sets Frank works with now are much larger. He hates manually searching through tables to find the correct data types for his tasks.
+\par Luckily, Frank has heard that his e-Sports company will soon be using a new tool to automatically classify the data in these data sets. He believes this will instantly help him be more efficient, and get more data analysis done quicker. Now, Frank can go home sooner and play more video games.\newline
+
+\includegraphics[width = \textwidth]{Dave-MattYarmolich-UserStory.png}
+Written by Matt Yarmolich
+
+>>>>>>> master
 \subsection{User Classes and Characteristics}
 \begin{longtable}{|l|p{3.8in}|}
 \hline
@@ -114,7 +146,7 @@ We are assuming that we will easily be able to integrate a database solution (i.
 \section{Use Cases}
 
 \subsection{\label{Selecting the Proper Classification from the UIl}Use Case 1: Select Proper Classification Category}
-This use cate details the the path of the data analyst providing feedback to the machine learning algorithm written by Matt Yarmolich
+This use case details the the path of the data analyst providing feedback to the machine learning algorithm written by Matt Yarmolich
 
 \begin{longtable}{|r|p{3.8in}|}
 \hline
@@ -201,7 +233,100 @@ Notes and Issues:&
 \hline
 \end{longtable}
 
-\subsection{\label{Whatever the next one is}Use Case 2: Whatever the next one is}
+
+\subsection{\label{Upload Data Sets}Use Case 2: Upload Data Sets}
+This use case details the the user flow of uploading data sets to the data classifier using the web interface, written by Spencer Schurk.
+
+\begin{longtable}{|r|p{3.8in}|}
+\hline
+Use Case ID:&2\\
+\hline
+Use Case Name:&Upload Data Sets\\
+\hline
+Created By:&Spencer Schurk\\
+\hline
+Last Upadted By:&Spencer Schurk\\
+\hline
+Date Created:&October 10, 2018\\
+\hline
+Date Last Updated:&October 10, 2018\\
+\hline
+Actors:&Data Analyst\\
+\hline
+Description:&After logging in, the system allows a data analyst to upload multiple data sets. After uploading data sets, the data analyst can begin the classification process.\\
+\hline
+Preconditions:&\begin{packed_enumerate}
+\item The data analyst is logged into the system.
+\item The data analyst has not uploaded any data sets.
+\item The data analyst has not began the classification process.
+\end{packed_enumerate}\\
+\hline
+Postconditions:&\begin{packed_enumerate}
+\item All selected data sets have been uploaded.
+\item The data analyst is now able to begin the classification process.
+\end{packed_enumerate}\\
+\hline
+Normal Flow:&1.0 Select multiple files to upload.\newline
+\begin{packed_enumerate}
+\item The data analyst selects "Upload Files" button.
+\item System opens local machine's file explorer / file selector.
+\item Data analyst selects multiple files from their local machine.
+\item Data analyst selects "Ok" or "Upload" on system file explorer.
+\item System displays list of files selected and begins to upload files.
+\item System displays progress of each file being uploaded.
+\item System displays "Upload successful" message after upload completes.
+\item Data analyst selects "Begin Classification" button.
+\end{packed_enumerate}\\
+\hline
+Alternate Flows:&1.1 Select files more than once. (branch after step 4)\newline
+\begin{packed_enumerate}
+\item While previously selected files are uploading, data analyst selects "Upload more files"
+\item System opens local machine's file explorer / file selector.
+\item Data analyst selects multiple files from their local machine.
+\item Data analyst selects "Ok" or "Upload" on system file explorer.
+\item System adds selected files to list of previously selected files that are uploading.
+\item Flow continues on step 8 of normal flow
+\end{packed_enumerate}\\
+\hline
+Exceptions:&1.0.E.1 Data analyst uploads unsupported file. (at step 4)\newline
+\begin{packed_enumerate}
+\item System displays error message, with file name present.
+\item Data analyst selects "OK" button.
+\item System removes selected file from list of files to upload.
+\item System continues to upload other selected files.\newline
+\end{packed_enumerate}
+1.0.E.2 Upload fails for any reason. (at step 5)\newline
+\begin{packed_enumerate}
+\item System displays "Upload failed" message
+\item Data analyst selects "Try again" or "Cancel" button.
+\item If "Try again" is selected, system continues at step 5, with all progress at 0.
+\item If "Cancel" button selected, page is refreshed, and continues at step 1.
+\end{packed_enumerate}\\
+\hline
+Includes:&None\\
+\hline
+Priority&High\\
+\hline
+Frequency of Use:&Once per data classification process.\\
+\hline
+Business Rules:&TBD\\
+\hline
+Special Requirements:&TBD\\
+\hline
+Assumptions:&\begin{packed_enumerate}
+\item Data sets are locally stored on data analyst's machine.
+\item Data analyst has active internet connection capable of uploading files.
+\end{packed_enumerate}\\
+\hline
+Notes and Issues:&\begin{packed_enumerate}
+\item What if the data analyst uploads the wrong file?
+\end{packed_enumerate}\\
+\hline
+\end{longtable}
+
+
+
+\subsection{\label{Whatever the next one is}Use Case 3: Whatever the next one is}
 This is a casual use-case.  Note that there is a label in the LaTeX so you can refer
 to it as being in section~\ref{Whatever the next one is} on page~\pageref{Whatever the next one is}.
 \begin{enumerate}
@@ -227,7 +352,7 @@ Each requirement should be uniquely identified with a sequence number or a meani
 \item REQ-1: The system shall be able to take in a specific data column and be able to identify it based on previous machine learning techniques used on the system and output a string of what it thinks it should output .
 \item REQ-2: The system shall be able to learn new classifications given to it by the Data Analysts as feedback from the front end.
 \item REQ-3: The system shall be able to learn categories over time as training is provided to it by the Software Engineers developing the system, and by data analysts feeding it new categories/training.
-\end{enumerate}
+\end{enumerate} (Written by Matt Yarmolich)
 
 \subsection{Data Classification Front End}
 \subsubsection{Description and Priority}
@@ -235,16 +360,23 @@ This feature set will allow the data analyst to interact with the output of the 
 \subsubsection{Stimulus/Response Sequences}
 List the sequences of user actions and system responses that stimulate the behavior defined for this feature. These will correspond to the dialog elements associated with use cases.
 \subsubsection{Functional Requirements}
-Itemize the detailed functional requirements associated with this feature. These are the software capabilities that must be present in order for the user to carry out the services provided by the feature, or to execute the use case. Include how the product should respond to anticipated error conditions or invalid inputs. Requirements should be concise, complete, unambiguous, verifiable, and necessary. Use "TBD" as a placeholder to indicate when necessary information is not yet available.\\
-\\
-Each requirement should be uniquely identified with a sequence number or a meaningful tag of some kind.
-
 \begin{enumerate}
 \item REQ-1: WIP
 \item REQ-2: WIP
 \item REQ-3: WIP
 \end{enumerate}
 
+\subsection{Data Parser}
+\subsubsection{Description and Priority}
+This feature set will allow the data analyst to submit data to the System and parse it into a computer readable interface and parse it into a data structure for storage and analysis. \subsubsection{Stimulus/Response Sequences}
+The data analyst will select a data set to upload to the server. The server will then accept this file and parse the file. During parsing, the computer will store each columns data in separate data structures for analysis. 
+\subsubsection{Functional Requirements}
+\begin{enumerate}
+\item REQ-1: The system shall accept data to be uploaded to the backend
+\item REQ-2: The system shall parse the data, storing each row's data for each column in a separate dynamically growing
+\item REQ-3: The system shall feed the data to the machine learning algorithm
+\item REQ-4: The system shall be able to accept over 10 data sets to upload at a time. (Written by Spencer Schurk)
+\end{enumerate}
 
 \section{External Interface Requirements}
 \subsection{User Interfaces}
@@ -259,10 +391,17 @@ Describe the requirements associated with any communications functions required 
 \section{Other Nonfunctional Requirements}
 \subsection{Performance Requirements}
 The customer has specified that performance is not a concern.
+\begin{enumerate}
+    \item The software will be usable by Data Analyst with and without programming assignments
+    \item The system shall be able to be simple to understand and usable by anyone within the company that wants to use it (Written by Matt Yarmolich)
+\end{enumerate}
 \subsection{Safety Requirements}
 During the classification stage, safety is not a concern. After the catalog phase we will begin redacting sensitive information.
 \subsection{Security Requirements}
-The software will have two factor authentication and will only allow verified users to access the systems databases.
+\begin{enumerate}
+    \item The software will have two factor authentication and will only allow verified users to access the systems databases.
+    \item The system shall not parse any uploaded data set until the user has selected "Begin Classification." (Written by Spencer Schurk)
+\end{enumerate}
 \subsection{Software Quality Attributes}
 \begin{enumerate}
     \item The system shall have a learning curve of 24 hours. This applies to all users ranging from a sports analyst to a data scientist.
