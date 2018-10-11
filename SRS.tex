@@ -584,6 +584,80 @@ Notes and Issues:&\begin{packed_enumerate}
 \hline
 \end{longtable}
 
+\subsection{\label{Upload Data Sets}Use Case 5: Exporting data and logs}
+
+\begin{longtable}{|r|p{3.8in}|}
+\hline
+Use Case ID:&5\\
+\hline
+Use Case Name:&Export Data\\
+\hline
+Created By:&Landon Gerrits\\
+\hline
+Last Updated By:&Landon Gerrits\\
+\hline
+Date Created:&October 10, 2018\\
+\hline
+Date Last Updated:&October 10, 2018\\
+\hline
+Actors:&Data Analyst and Project Managers\\
+\hline
+Description:&After the system has run and classified its data input, it is ready to be exported. Data analysts and project managers can choose to export this data to specified file types.\\
+\hline
+Preconditions:&\begin{packed_enumerate}
+\item The user is logged into the system.
+\item The user has uploaded a data set
+\item The user has run the classification process.
+\item The classification process has been completed.
+\end{packed_enumerate}\\
+\hline
+Postconditions:&\begin{packed_enumerate}
+\item All selected data sets have been uploaded.
+\item The classification process has been completed.
+\end{packed_enumerate}\\
+\hline
+Normal Flow:&1.0 Select expected file type output.\newline
+\begin{packed_enumerate}
+\item The user uploads their data sets.
+\item The data is processed by the classifier.
+\item As the data is going through classifications, each classification is being logged 
+\item When the data is done being classified, the logs will have available the input, output, and status logs
+\item The user can view the classifications in the program's GUI
+\item The user can select the specified file output type: .JSON, .CSV, .XML
+\end{packed_enumerate}\\
+\hline
+Alternate Flows:&1.1 User chooses not to export a classified file\newline
+\begin{packed_enumerate}
+\item User runs the program
+\item User chooses not to export file (usually due to inadequate data classification)
+\end{packed_enumerate}\\
+\hline
+Exceptions:&1.0.E.1 Data analyst selects .CSV\newline
+\begin{packed_enumerate}
+\item User selects .CSV file type for export (Comma Separated Value documents do not work well with grouped sets the JSON and XML can handle)
+\item User selects a location to put the file
+\item The system exports a .zip file that contains a folder of .CSV files for each classification 
+\end{packed_enumerate}\\
+\hline
+Includes:&None\\
+\hline
+Priority&Medium\\
+\hline
+Frequency of Use:&Once per data classification process.\\
+\hline
+Business Rules:&TBD\\
+\hline
+Special Requirements:&TBD\\
+\hline
+Assumptions:&\begin{packed_enumerate}
+\item Data set is large enough to be classified (minimum several hundred entries)
+\end{packed_enumerate}\\
+\hline
+Notes and Issues:&\begin{packed_enumerate}
+\item Supporting multiple export file types will be time consuming for developers. A single file type may be desirable if there are higher priorities for the project
+\end{packed_enumerate}\\
+\hline
+\end{longtable}
 
 \subsection{\label{Upload Data Sets}Use Case 6: Account Creation}
 
