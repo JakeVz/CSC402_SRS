@@ -1,6 +1,7 @@
 \documentclass[12pt,oneside,letterpaper]{article}
 \usepackage{longtable}
 \usepackage{graphicx}
+\usepackage[nogroupskip]{glossaries}
 %\usepackage{fullpage}
 
 \newenvironment{packed_enumerate}{ %custom enumerate for single-spacing
@@ -15,6 +16,24 @@
 \pagestyle{headings}
 \oddsidemargin 0.25in \textwidth     6.25in \topmargin     0.4in
 \textheight    8.5in
+
+
+%This is for adding things to the glossary. Will Automatically be alphabetical order.
+% NOTE: IN ORDER FOR THE ITEM TO APPEAR IN GLOSSARY, YOU MUST USE "\gls{[name of entry]}" so that the glossary can put a page number of where it is
+\newglossaryentry{example}
+{ name=test entry,
+  description={This is the definition of the word},
+  sort={0}
+  }
+  
+\newglossaryentry{example2}
+{ name=test entry2,
+  description={This is the definition of the word},
+  sort={0}
+  }
+
+\makenoidxglossaries
+
 
 \begin{document}
 
@@ -52,7 +71,7 @@ Matt Yarmolich&October 9, 2018&Lead Author of System Features&1.0\\
 \hline
 Spencer Schurk&October 10, 2018&Lead Author of Introduction&1.0\\
 \hline
-&&&\\
+Jake Veazey&October 10, 2018&Maintains Document and glossary. Assisted on Front End System Features&1.0\\
 \hline
 \end{tabular}
 
@@ -65,7 +84,7 @@ Geraldo Macias&October 8, 2018&Completion of Other Nonfunctional Requirements&1.
 \hline
 Spencer Schurk&October 10, 2018&Addition of my User Persona, Use Case, Functional Requirement, and Non-Functinal Requirement&1.0\\
 \hline
-&&&\\
+Jake Veazey&October 10, 2018&Addition of Front end system reqs, Use Case, User Persona, clean up/add glossary&1.0\\
 \hline
 &&&\\
 \hline
@@ -136,6 +155,17 @@ The primary feature of the application is that it will be able to take data from
 has been an avid sports fan for his entire life and loves following the numbers and figuring out threats on the field for his team. His dad really wanted him to be a football player, but he was never good enough to play on any competitive team.
 \par Thanks to his father?s drive, he has been able to push himself into fields that he believed would make his father proud. Thus he began a career as a data analyst for his dad (and his) favorite sports team. Unfortunately, Dave is getting sick of doing his job week by week and wants tools to help make his job go by faster so he has more time doing his actual passion, coding.
 \par Through his relentless search for tools, Dave has found the data classifier with a GUI that helps make his job way easier. He likes that it uses the newest trends in computing (machine learning) and that it has GUI for ease of use to make his job go by faster. Dave plans on implementing this technology so that he has more time to do his passion and work on creating games written in OpenGl and c++ since that is his bread and butter and what he likes doing the most in this world
+
+\subsubsection{Chad Chaderson}
+\textbf{Author}: Jake Veazey\newline
+\textbf{Age}: 19\newline
+\textbf{Job}:Data Company Intern\newline
+\textbf{Bio}:\newline
+\par Chad Chaderson is a Computer Science student, with a minor is data science, at Yale University and began working for a data analyst company the summer after his second year of school. Chad does not know much of what he wants to do with his degrees after college, so he is using the internship as a way to expand his horizons to learn and discover. 
+\par At this internship Chad has been asked to do a lot of chores that the rest of the employees don't want to do. One such task has been to take many files of data that has not been classified into its categories but had no way to do so in a fast and easy way. After a few weeks of manually sorting and classifying data from multiple files that we assigned to him, Chad got fristrated and was contemplating leaving the company and changing his area of concentration. Before he made the decision, Chad, spoke to his boss and learned that there are tools online that may be able to assist him in his work -- this is when Chad found the Data Classifier tool and online GUI.
+\par Chad found that the entire system worked well with his company's information, and because of his excellent work, he got an offer to come back the following summer.
+
+
 
 \subsection{User Classes and Characteristics}
 \begin{longtable}{|l|p{3.8in}|}
@@ -448,15 +478,25 @@ Each requirement should be uniquely identified with a sequence number or a meani
 
 \subsection{Data Classification Front End}
 \subsubsection{Description and Priority}
-This feature set will allow the data analyst to interact with the output of the machine learning algorithm for further classification and viewing of what the algorithm outputs. This feature set is another high priority feature as it allows our algorithm to be interacted with by the client and provide meaningful responses to help further teach the algorithm about new datasets and expectations. 
+This feature set will allow the data analyst to interact with the output of the machine learning algorithm for further classification and viewing of what the algorithm outputs. This feature set is another high priority feature as it allows our algorithm to be interacted with by the client and provide meaningful responses to help further teach the algorithm about new datasets and expectations. In addition, the user will be given download options of their initial input file and the output of the classifier with logs completed with timestamps as the file(s) move through the classifier.
 \subsubsection{Stimulus/Response Sequences}
-List the sequences of user actions and system responses that stimulate the behavior defined for this feature. These will correspond to the dialog elements associated with use cases.
+Users will be able to navigate the site using the front end and its linkage to the system and backend to perform the tasks necessary
 \subsubsection{Functional Requirements}
 \begin{enumerate}
-\item REQ-1: WIP
-\item REQ-2: WIP
-\item REQ-3: WIP
+\item REQ-1: User Uploads data set(s) after pressing the upload button
+\begin{itemize}
+    \item Each data set uploaded is timestamped by the system
+    \item Each set is added to a FIFO queue for processing
+    \item First set is checked for compliance and then computed. Else fails
+    \item Output is stored in User's storage (AWS S3)
+\end{itemize}
+\item REQ-2: User requests the Output or Input of the the classifier
+\begin{itemize}
+    \item Cloud storage is accessed by the backend and then provided to the user
+    \item Storage is only accessable by the service for security purposes
+\end{itemize}
 \end{enumerate}
+Written by Jake Veazey
 
 \subsection{Data Parser}
 \subsubsection{Description and Priority}
@@ -504,15 +544,38 @@ During the classification stage, safety is not a concern. After the catalog phas
 
 
 \section{Other Requirements}
-Define any other requirements not covered elsewhere in the SRS. This might include database requirements, internationalization requirements, legal requirements, reuse objectives for the project, and so on. Add any new sections that are pertinent to the project.
+\begin{itemize}
+    \item Example Req
+    \begin{itemize}
+        \item Example description
+    \end{itemize}
+    \item Example Req
+    \begin{itemize}
+        \item Example description
+    \end{itemize}
+\end{itemize}
 
 \appendix
-\section{Glossary}
-Define all the terms necessary to properly interpret the SRS, including acronyms and abbreviations. You may wish to build a separate glossary that spans multiple projects or the entire organization, and just include terms specific to a single project in each SRS.
 
 \section{Analysis Models}
 Optionally, include any pertinent analysis models, such as data flow diagrams, class diagrams, state-transition diagrams, or entity-relationship diagrams.
 
 \section{Issues List}
-This is a dynamic list of the open requirements issues that remain to be resolved, including TBDs, pending decisions, information that is needed, conflicts awaiting resolution, and the like.
+\begin{itemize}
+    \item Example Ticket 1
+    \begin{itemize}
+        \item Example description
+    \end{itemize}
+    \item Example Ticket 2
+    \begin{itemize}
+        \item Example description
+    \end{itemize}
+\end{itemize}
+
+
+\gls{example} \gls{example2}
+
+\printnoidxglossary[sort=standard]
+
 \end{document}
+
