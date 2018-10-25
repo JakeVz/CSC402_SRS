@@ -27,11 +27,18 @@
   sort={0}
   }
   
-\newglossaryentry{example2}
-{ name=test entry2,
+\newglossaryentry{Firebase}
+{ name=Firebase,
+  description={Firebase provides a realtime database and backend as a service. The service provides application developers an API that allows application data to be synchronized across clients and stored on Firebase's cloud.},
+  sort={0}
+  }
+  
+\newglossaryentry{example}
+{ name=test entry,
   description={This is the definition of the word},
   sort={0}
   }
+
 
 \makenoidxglossaries
 
@@ -801,23 +808,20 @@ This system has a web application with an interact-able web GUI. The web interfa
 
 There will be a button to confirm the file selections. There will be a button to confirm upload and a screen that shows the progress of the file upload.
 
-The user will then be greeted with another screen explaining the data classification process. This screen has a diagram of the entire pipepline of the process: File Import - Data Classifier - Output to user - User edits - File Output
+The user will then be greeted with another screen explaining the data classification process. This screen has a diagram of the entire pipeline of the process: File Import - Data Classifier - Output to user - User edits - File Output
 
 There is a button titled "Begin Data Classification" that will have a progress indicator while the data is being processed. 
 
-The following screen will display the data set with it's classifications. The user will have the ability to edit the names of the classifications by clicking on each of the classsifier fields.
+The following screen will display the data set with it's classifications. The user will have the ability to edit the names of the classifications by clicking on each of the classifier fields.
 
 \subsection{Hardware Interfaces}
 For the prototype the system will run off a user's local machine. The computer must have at least 8gb of ram to run efficiently. In the future the program will be hosted on a website and all of the computation processing will be done on Mark Logic's server machines.
 \subsection{Software Interfaces}
-There is still muchh to be determined for what will be used for software interfaces. Items that have not been decided upon: operating system, libraries, database, and other potential components.
+There is still much to be determined for what will be used for software interfaces. Items that have not been decided upon: operating system, libraries, database, and other potential components.
 
-It is possible that Google Firebase will store our data before and after processing.
+It is possible that Google \gls{Firebase} will store our data before and after processing.
 \subsection{Communications Interfaces}
-Communication requirements are undefined at this point. The system will have a web interface and allow the user to upload and download various file types. 
-
-\item (Written by Landon Gerrits)
-
+Communication requirements are undefined at this point. The system will have a web interface and allow the user to upload and download various file types. (Written by Landon Gerrits)
 
 \section{Other Nonfunctional Requirements}
 \subsection{Performance Requirements}
@@ -870,8 +874,6 @@ Optionally, include any pertinent analysis models, such as data flow diagrams, c
         \item Example description
     \end{itemize}
 \end{itemize}
-
-\gls{example}
 
 \printnoidxglossary[sort=standard]
 
