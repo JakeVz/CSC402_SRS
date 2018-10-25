@@ -20,7 +20,7 @@
 
 
 %This is for adding things to the glossary. Will Automatically be alphabetical order.
-% NOTE: IN ORDER FOR THE ITEM TO APPEAR IN GLOSSARY, YOU MUST USE "\gls{[name of entry]}" so that the glossary can put a page number of where it is
+% NOTE: IN ORDER FOR THE ITEM TO APPEAR IN GLOSSARY, YOU MUST USE "\gls{[name of entry]}" so that the glossary can put a page number of where it is. the sort needs to be the first letter or so of the name of the entry -- or the entire word if need be for ordering
 \newglossaryentry{example}
 { name=test entry,
   description={This is the definition of the word},
@@ -30,20 +30,32 @@
 \newglossaryentry{front end}
 { name=front end,
   description={a client which is usually a device or service that is used to communicate between the user and the system's database or logic (back end)},
-  sort={0}
+  sort={f}
 }
   
 \newglossaryentry{back end}
 { name=back end,
   description={the database or logic of a system, often is not directly accessible by the user},
-  sort={0}
+  sort={b}
 }
   
 \newglossaryentry{Firebase}
 { name=Firebase,
   description={Google's cloud service that provides a realtime database and \gls{back end}. The service provides application developers an API that allows application data to be synchronized across clients and stored on Firebase's cloud},
-  sort={0}
-  }
+  sort={f}
+}
+
+\newglossaryentry{AWS}
+{ name=AWS,
+  description={Amazon Web Services: a secure cloud services platform, offering compute power, database storage, content delivery and other functionality to help businesses scale and grow},
+  sort={a}
+}
+
+\newglossaryentry{S3}
+{ name=S3,
+  description={Simple Storage System: Storage of files and information on the cloud. Part of AWS},
+  sort={s}
+}
 
 
 \makenoidxglossaries
@@ -63,7 +75,7 @@ version 2.0}
 \emph{San Luis Obispo, CA USA}\\
 }
 
-\date{October 10, 2018}
+\date{October 25, 2018}
 \maketitle \thispagestyle{empty}
 
 
@@ -114,13 +126,16 @@ Spencer Schurk&October 24, 2018&Section 1 revisions&2.0\\
 \hline
 &&&\\
 \hline
+Jake Veazey&October 24, 2018&Clarification and additions to Overall Description, Glossary, and overall maintenance of the document&1.0\\
+\hline
+&&&\\
 \end{tabular}
 
 \newpage
 
 \section{Introduction}
 \subsection{Purpose}
-The purpose of this document is to present the functional and non-functional requirements of our Data Classification application version 1.0. This document also features potential user personas, fully-dressed use cases of the product, and diagrams to complement text descriptions. This document serves as a source of reference and guidance during the development process. Please note, this document does not describe the architecture of this application.
+The purpose of this document is to present the functional and non-functional requirements of our Data Classification application version 1.0. In addition, it also features potential user personas, fully-dressed use cases of the product, and diagrams to complement text descriptions. This document serves as a source of reference and guidance during the development process. Please note, this document does not describe the architecture of this application.
 
 \subsection{Document Conventions}
 Requirements listed in later sections will adhere to the following convention: FR-n for functional requirements, and NR-m for non-functional requirements, where n and m is the requirement's numerical value. No two functional requirements shall have the same n-value, and likewise, no two non-functional requirements shall have the same m-value.
@@ -159,6 +174,7 @@ For information regarding the scope and vision of this project, please reference
 \section{Overall Description}
 \subsection{Product Perspective}
 One of the biggest unsolved roadblocks for data scientists is data sanitization and grooming. Data scientists spend excessive amounts of time preparing data before even being able to do productive work. Eliminating this downtime would allow more room for data scientists to do the meaningful work that they actually want to do. Our application aims to do just this. Through the use of machine learning techniques and a robust web interface, our application will take various ungroomed data sets as input and will convert them into cohesive, organized documents as output. We want to make the process of pre-analysis data grooming as automated and painless as possible. 
+\newline The classification service will be composed of two parts: a \gls{back end} that contains machine learning and connection to databases and storage technology and a \gls{front end} that links the \gls{back end} to the user. The overall scope of the \gls{back end} will be to take any number of inputted, ungroomed, files, classify using machine learning and algorithms, and use services and databases to store user inputted information and any output that relates to the user's input. The \gls{front end} takes on the role of the link from user to backend and will, overall, allow user uploads of files and user downloads of the \gls{back end}s output. 
 \subsection{Product Features}
 The primary feature of the application is that it will be able to take data from various different "silos" and automatically make meaningful, organized categories out of them. The program will be robust enough to make sense out of data that is unconventionally or even improperly formatted. The application will also have a web interface that data scientists will be able to interact with.
 \subsection{User Personas}
@@ -234,13 +250,13 @@ Data Scientist without programming knowledge&A Data Scientist that will require\
 \hline
 \end{longtable}
 \subsection{Operating Environment}
-The program will exist as a web based application.
+The program will exist as a web based application as well as a database and a block storage system to perform with the \gls{back end}.
 \subsection{Design and Implementation Constraints}
-The \gls{back end}/machine learning parts of the application will have to be written in Python. Our application also must implement a web based interface.
+The \gls{back end}/machine learning parts of the application will have to be written in Python. Our application also must implement a web based interface that will be written in JavaScript that will call APIs built in the \gls{back end}.
 \subsection{User Documentation}
 During implementation, we will be monitoring issues through the use of JIRA. We will likely intend to include some simple documentation for using the user interface along with the application. 
 \subsection{Assumptions and Dependencies}
-We are assuming that we will easily be able to integrate a database solution (i.e. MongoDB) into our application during development. In addition, we are assuming that we will be able to find a well documented machine learning technique for classifying the data categories. Finally, we are assuming that we will be able to use something like Google Firebase for our web app development.
+We are assuming that we will easily be able to integrate a database solution (i.e. MongoDB, DynamoDB) into our application during development. In addition, we are assuming that we will be able to find a well documented machine learning technique for classifying the data categories. \gls{AWS} has also been made available for us to use and can be nicely integrated with the \gls{back end} to store files in \gls{S3} Buckets and other information in one of the offered databases. Finally, we are assuming that we will be able to use something like Google Firebase for our web app development.
 
 
 \section{Use Cases}
