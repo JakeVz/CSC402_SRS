@@ -27,9 +27,21 @@
   sort={0}
   }
   
+\newglossaryentry{front end}
+{ name=front end,
+  description={a client which is usually a device or service that is used to communicate between the user and the system's database or logic (back end)},
+  sort={0}
+}
+  
+\newglossaryentry{back end}
+{ name=back end,
+  description={the database or logic of a system, often is not directly accessible by the user},
+  sort={0}
+}
+  
 \newglossaryentry{Firebase}
 { name=Firebase,
-  description={Google's cloud service that provides a realtime database and backend. The service provides application developers an API that allows application data to be synchronized across clients and stored on Firebase's cloud.},
+  description={Google's cloud service that provides a realtime database and \gls{back end}. The service provides application developers an API that allows application data to be synchronized across clients and stored on Firebase's cloud},
   sort={0}
   }
 
@@ -73,7 +85,7 @@ Matt Yarmolich&October 9, 2018&Lead Author of System Features&1.0\\
 \hline
 Spencer Schurk&October 10, 2018&Lead Author of Introduction&1.0\\
 \hline
-Jake Veazey&October 10, 2018&Maintains Document and glossary. Assisted on Front End System Features&1.0\\
+Jake Veazey&October 10, 2018&Maintains Document and glossary. Assisted on \gls{front end} System Features&1.0\\
 \hline
 Brad Foster&October 10, 2018&Lead Author of Overall Description&1.0\\
 \hline
@@ -90,7 +102,7 @@ Geraldo Macias&October 8, 2018&Completion of Other Nonfunctional Requirements&1.
 \hline
 Spencer Schurk&October 10, 2018&Addition of my User Persona, Use Case, Functional Requirement, and Non-Functinal Requirement&1.0\\
 \hline
-Jake Veazey&October 10, 2018&Addition of Front end system reqs, Use Case, User Persona, clean up/add glossary&1.0\\
+Jake Veazey&October 10, 2018&Addition of \gls{front end} system reqs, Use Case, User Persona, clean up/add glossary&1.0\\
 \hline
 Spencer Schurk&October 10, 2018&Completion of Introduction&1.0\\
 \hline
@@ -224,7 +236,7 @@ Data Scientist without programming knowledge&A Data Scientist that will require\
 \subsection{Operating Environment}
 The program will exist as a web based application.
 \subsection{Design and Implementation Constraints}
-The back end/machine learning parts of the application will have to be written in Python. Our application also must implement a web based interface.
+The \gls{back end}/machine learning parts of the application will have to be written in Python. Our application also must implement a web based interface.
 \subsection{User Documentation}
 During implementation, we will be monitoring issues through the use of JIRA. We will likely intend to include some simple documentation for using the user interface along with the application. 
 \subsection{Assumptions and Dependencies}
@@ -252,7 +264,7 @@ Date Last Updated:&October 9, 2018\\
 \hline
 Actors:&Data Analyst\\
 \hline
-Description:&A Data Analyst accesses the data classification front end by feeding it information from an HTML-5 input tag and having the information parsed by the system. .\\
+Description:&A Data Analyst accesses the data classification \gls{front end} by feeding it information from an HTML-5 input tag and having the information parsed by the system. .\\
 \hline
 Preconditions:&
 \begin{packed_enumerate}
@@ -271,19 +283,19 @@ Postconditions:&
 Normal Flow:&1.0 Select the correct category from the data classifier\\
 &  %line needed for aligning enumeration 
 \begin{packed_enumerate}
-\item The Data Analyst uploads the dataset to the front end of the system
+\item The Data Analyst uploads the dataset to the \gls{front end} of the system
 \item System displays upload status
-\item System displays upload complete and feeds the data to the backend
-\item The backend classifies the initial column data
-\item The backend classifies the rest of the data based on past data columns and previous data fed through the system
-\item the backend outputs the results of the data in a web-parsable format (JSON)
-\item The front end parses this output and displays it to the data analyst along with the columns in question
+\item System displays upload complete and feeds the data to the \gls{back end}
+\item The \gls{back end} classifies the initial column data
+\item The \gls{back end} classifies the rest of the data based on past data columns and previous data fed through the system
+\item the \gls{back end} outputs the results of the data in a web-parsable format (JSON)
+\item The \gls{front end} parses this output and displays it to the data analyst along with the columns in question
 \item the Data Analyst reviews the data and selects the correct category based on their domain knowledge
-\item The front end feeds their result back to the data classification backend
+\item The \gls{front end} feeds their result back to the data classification \gls{back end}
 \item System displays the correct tagging of the data set
 \end{packed_enumerate}\\
 \hline
-Alternative Flows:&1.1 No results from backend (branch after step )\\
+Alternative Flows:&1.1 No results from \gls{back end} (branch after step )\\
 &  %line needed for aligning enumeration 
 \begin{packed_enumerate}
 \item The system outputs no previously learned categories
@@ -291,7 +303,7 @@ Alternative Flows:&1.1 No results from backend (branch after step )\\
 \item Return to step 8.
 \end{packed_enumerate}\\
 \hline
-Exceptions:&1.0.E.1 System loses connection to front end(at step 1)\\
+Exceptions:&1.0.E.1 System loses connection to \gls{front end}(at step 1)\\
 &1. 	System informs Data Analyst that connection has been lost to the server\\
 &2.	Patron reloads page\\
 &3.	System restarts use case.\\
@@ -744,13 +756,13 @@ Notes and Issues:&Ensure the customer hands the software to the System Administr
 
 
 \section{System Features}
-This system will be primarily used for data classification and adding meta-tags/titles to unidentified datasets inputted by a user from various formats including CSVs, JSON, and SQL. The main purpose of this product is to give Data Scientists, Data Engineers, and Data Analysis's insight on what kind of data they are collecting, and the ability to verify or modify any tags generated by the machine learning processes in our backend. This will be done through a front end written for the web interfacing with most modern browsers with javascript enabled. This front end will be powered by a backend written in Python leveraging a machine learning library such as TensorFlow. This backend will take data in from a recognized data format, parse the data into a data structure for temporary storage, feed it into this library and spit out possible classification tags. These tags will then be sent to the front end for verification by the data analyst for verification/modification. This data analyst will be able to see the data in question in order to judge the classifiers accuracy and to teach it about new datasets/data types by piping these recommendations back to the machine learning algorithm.
+This system will be primarily used for data classification and adding meta-tags/titles to unidentified datasets inputted by a user from various formats including CSVs, JSON, and SQL. The main purpose of this product is to give Data Scientists, Data Engineers, and Data Analysis's insight on what kind of data they are collecting, and the ability to verify or modify any tags generated by the machine learning processes in our \gls{back end}. This will be done through a \gls{front end} written for the web interfacing with most modern browsers with javascript enabled. This \gls{front end} will be powered by a \gls{back end} written in Python leveraging a machine learning library such as TensorFlow. This \gls{back end} will take data in from a recognized data format, parse the data into a data structure for temporary storage, feed it into this library and spit out possible classification tags. These tags will then be sent to the \gls{front end} for verification by the data analyst for verification/modification. This data analyst will be able to see the data in question in order to judge the classifiers accuracy and to teach it about new datasets/data types by piping these recommendations back to the machine learning algorithm.
 
   \subsection{Machine Learning Python Backend}
 \subsubsection{Description and Priority}
-This feature of the product will allow data being fed into the product to produce meaningful data for output/viewing by the data analyst. The benefit of this algorithm is that it will provide data to the front end for easy viewing and provide an endpoint for where feedback from the data analysts. In terms of cost, this is probably going to be a fairly expensive feature to implement as its the main focus of this project and without it, the rest of the project is useless. However there are a ton of resources for implementing this feature minimizing the potential development time required. Finally, this system requirement is of High priority due to the fact it is the main feature that makes our product useful. 
+This feature of the product will allow data being fed into the product to produce meaningful data for output/viewing by the data analyst. The benefit of this algorithm is that it will provide data to the \gls{front end} for easy viewing and provide an endpoint for where feedback from the data analysts. In terms of cost, this is probably going to be a fairly expensive feature to implement as its the main focus of this project and without it, the rest of the project is useless. However there are a ton of resources for implementing this feature minimizing the potential development time required. Finally, this system requirement is of High priority due to the fact it is the main feature that makes our product useful. 
 \subsubsection{Stimulus/Response Sequences}
-The system shall take in a dataset from the front end and then feed this dataset into the machine learning algorithm column line by line. This step will be done by the data parser which will read in the columns line by line and separate them (detailed below). This data will then be compared to previous inputs taught by the algorithm by the Software Engineers developing the program. With these comparisons, the algorithm shall develop a result that fits the dataset, or output unknown if it doesnt have any idea what the dataset is of. It also will look to previous classifications contained by the dataset 
+The system shall take in a dataset from the \gls{front end} and then feed this dataset into the machine learning algorithm column line by line. This step will be done by the data parser which will read in the columns line by line and separate them (detailed below). This data will then be compared to previous inputs taught by the algorithm by the Software Engineers developing the program. With these comparisons, the algorithm shall develop a result that fits the dataset, or output unknown if it doesnt have any idea what the dataset is of. It also will look to previous classifications contained by the dataset 
 \subsubsection{Functional Requirements}
 Itemize the detailed functional requirements associated with this feature. These are the software capabilities that must be present in order for the user to carry out the services provided by the feature, or to execute the use case. Include how the product should respond to anticipated error conditions or invalid inputs. Requirements should be concise, complete, unambiguous, verifiable, and necessary. Use "TBD" as a placeholder to indicate when necessary information is not yet available.\\
 \\
@@ -758,15 +770,15 @@ Each requirement should be uniquely identified with a sequence number or a meani
 
 \begin{enumerate}
 \item REQ-1: The system shall be able to take in a specific data column and be able to identify it based on previous machine learning techniques used on the system and output a string of what it thinks it should output .
-\item REQ-2: The system shall be able to learn new classifications given to it by the Data Analysts as feedback from the front end.
+\item REQ-2: The system shall be able to learn new classifications given to it by the Data Analysts as feedback from the \gls{front end}.
 \item REQ-3: The system shall be able to learn categories over time as training is provided to it by the Software Engineers developing the system, and by data analysts feeding it new categories/training.
 \end{enumerate} (Written by Matt Yarmolich)
 
-\subsection{Data Classification Front End}
+\subsection{Data Classification \gls{front end}}
 \subsubsection{Description and Priority}
 This feature set will allow the data analyst to interact with the output of the machine learning algorithm for further classification and viewing of what the algorithm outputs. This feature set is another high priority feature as it allows our algorithm to be interacted with by the client and provide meaningful responses to help further teach the algorithm about new datasets and expectations. In addition, the user will be given download options of their initial input file and the output of the classifier with logs completed with timestamps as the file(s) move through the classifier.
 \subsubsection{Stimulus/Response Sequences}
-Users will be able to navigate the site using the front end and its linkage to the system and backend to perform the tasks necessary
+Users will be able to navigate the site using the \gls{front end} and its linkage to the system and \gls{back end} to perform the tasks necessary
 \subsubsection{Functional Requirements}
 \begin{enumerate}
 \item REQ-1: User Uploads data set(s) after pressing the upload button
@@ -778,7 +790,7 @@ Users will be able to navigate the site using the front end and its linkage to t
 \end{itemize}
 \item REQ-2: User requests the Output or Input of the the classifier
 \begin{itemize}
-    \item Cloud storage is accessed by the backend and then provided to the user
+    \item Cloud storage is accessed by the \gls{back end} and then provided to the user
     \item Storage is only accessable by the service for security purposes
 \end{itemize}
 \end{enumerate}
@@ -790,7 +802,7 @@ This feature set will allow the data analyst to submit data to the System and pa
 The data analyst will select a data set to upload to the server. The server will then accept this file and parse the file. During parsing, the computer will store each columns data in separate data structures for analysis. 
 \subsubsection{Functional Requirements}
 \begin{enumerate}
-\item REQ-1: The system shall accept data to be uploaded to the backend
+\item REQ-1: The system shall accept data to be uploaded to the \gls{back end}
 \item REQ-2: The system shall parse the data, storing each row's data for each column in a separate dynamically growing
 \item REQ-3: The system shall feed the data to the machine learning algorithm
 \item REQ-4: The system shall be able to accept over 10 data sets to upload at a time. (Written by Spencer Schurk)
