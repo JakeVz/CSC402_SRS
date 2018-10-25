@@ -274,8 +274,8 @@ Normal Flow:&1.0 Select the correct category from the data classifier\\
 \item The Data Analyst uploads the dataset to the front end of the system
 \item System displays upload status
 \item System displays upload complete and feeds the data to the backend
-\item The backend classifies the initial column data
-\item The backend classifies the rest of the data based on past data columns and previous data fed through the system
+\item The machine learning classifier classifies the initial column data
+\item The machine learning classifier the rest of the data based on past data columns and previous data fed through the system
 \item the backend outputs the results of the data in a web-parsable format (JSON)
 \item The front end parses this output and displays it to the data analyst along with the columns in question
 \item the Data Analyst reviews the data and selects the correct category based on their domain knowledge
@@ -303,21 +303,6 @@ Priority:&High\\
 Frequency of Use:&Approximately n uses per data set (depends on column inputted)\\
 \hline
 Business Rules:&TBD\\
-\hline
-Special Requirements:&
-\begin{packed_enumerate}
-\item Patron shall be able to cancel the meal order at any time prior to confirming the order.
-\item Patron shall be able to view all meals he ordered within the previous six months and repeat one of those meals as the new order, provided that all food items are available on the menu for the requested delivery date. (Priority = medium)
-\end{packed_enumerate}\\
-\hline
-Assumptions:&Assume that 30 percent of Patrons will order the daily special (source: previous six months of cafeteria data).\\
-\hline
-Notes and Issues:&
-\begin{packed_enumerate}
-\item The default date is the current date if the Patron is using the system before today's order cutoff time. Otherwise, the default date is the next day that the cafeteria is open.
-\item If Patron doesn't want to have the meal delivered, the precondition requiring registration for payroll deduction is not applicable.
-\item Peak usage load for this use case is between 8:00am and 10:00am local time.
-\end{packed_enumerate}\\
 \hline
 \end{longtable}
 
