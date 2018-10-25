@@ -95,7 +95,7 @@ Spencer Schurk&October 10, 2018&Completion of Introduction&1.0\\
 \hline
 Brad Foster&October 10, 2018&Completion of Overall Description&1.0\\
 \hline
-Geraldo Macias&October 24, 2018&Section 6 revision&2.0\\
+Geraldo Macias&October 24, 2018&Section 6 revision, User Description update, Use Case 6 update&2.0\\
 \hline
 &&&\\
 \hline
@@ -698,37 +698,36 @@ Date Last Updated:&October 10, 2018\\
 \hline
 Actors:&Data Analyst, System Administrator\\
 \hline
-Description:&Before the system can start to perform analytics, the user needs to create an account. It is important that only the data analyst may view the data.Two types of accounts can be created, a data analyst, and a system administrator\\
+Description:&Before the system can start to perform analytics, an Admin must create an account for a data scientist. It is important that only the data analyst may view the data.Two types of accounts can be created, a data analyst, and a system administrator\\
 \hline
 Preconditions:&\begin{packed_enumerate}
 \item The system must be installed.
 \item If a Data Analyst account is being created, a System Administrator must already exist.
 \end{packed_enumerate}\\
 \hline
-Postconditions:&A System Administrator must approve a new Data Analyst account before it may be accessed.\\
+Postconditions:&A System Administrator must create a new Data Analyst account before it may be accessed.\\
 \hline
-Normal Flow:&1.0 New account accepted.\newline
+Normal Flow:&1.0 New account created.\newline
 \begin{packed_enumerate}
 \item A System Administrator has been established.
-\item A Data Analyst or System Administrator creates an account.
-\item An approved System Administrator approves the new account.
-\item Data Analyst now has access to companies data and our product Or System Administrator can approve/deny future account creations.
+\item A System Administrator creates an data scientist account..
+\item Data Analyst now has access to companies data and our product.
 \end{packed_enumerate}\\
 \hline
 Alternate Flows:&1.1 New account denied. (branch after step 2)\newline
 \begin{packed_enumerate}
-\item A System Administrator denies the new account.
-\item The new account is deleted.
+\item A System Administrator deletes an account.
+\item A data scientist account is deleted.
 \end{packed_enumerate}\\
 \hline
-Exceptions:&1.0.E.1 A System Administrator accidentally approves an account (at step 3).\newline
+Exceptions:&1.0.E.1 A System Administrator accidentally creates an account (at step 2).\newline
 The account is deleted.\\
 \hline
 Includes:&None\\
 \hline
-Priority&Medium\\
+Priority&Low\\
 \hline
-Frequency of Use:&Once per new user.\\
+Frequency of Use:&Once per new data scientist.\\
 \hline
 Business Rules:&TBD\\
 \hline
