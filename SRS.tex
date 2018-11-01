@@ -66,7 +66,7 @@
 
 \title{\bfseries Data Classifier: \\
 Software Requirements Specification\\
-version 2.0}
+Version 2.1}
 
 \author {
 \large{Team Mark}\\
@@ -671,18 +671,16 @@ Postconditions:&\begin{packed_enumerate}
 \hline
 Normal Flow:&1.0 Select expected file type output.\newline
 \begin{packed_enumerate}
-\item The user uploads their data sets.
-\item The data is processed by the classifier.
-\item As the data is going through classifications, each classification is being logged 
-\item When the data is done being classified, the logs will have available the input, output, and status logs
 \item The user can view the classifications in the program's GUI
 \item The user can select the specified file output type: .JSON, .CSV, .XML
+\item The specified file output type is exported.
 \end{packed_enumerate}\\
 \hline
-Alternate Flows:&1.1 User chooses not to export a classified file\newline
+Alternate Flows:&1.1 User chooses multiple export file types\newline
 \begin{packed_enumerate}
 \item User runs the program
-\item User chooses not to export file (usually due to inadequate data classification)
+\item User checks multiple file types for export 
+\item The system exports the selected file types. 
 \end{packed_enumerate}\\
 \hline
 Exceptions:&1.0.E.1 Data analyst selects .CSV\newline
