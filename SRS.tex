@@ -577,7 +577,7 @@ Last Updated By:&Jake Veazey\\
 \hline
 Date Created:&October 10, 2018\\
 \hline
-Date Last Updated:&October 10, 2018\\
+Date Last Updated:&November 1, 2018\\
 \hline
 Actors:&Data Analyst\\
 \hline
@@ -585,7 +585,7 @@ Description:&After logging in, the system allows a data analyst to upload multip
 \hline
 Preconditions:&\begin{packed_enumerate}
 \item The data analyst is logged into the system.
-\item The data analyst has just uploaded a data set
+\item The data analyst has just uploaded a data set and identied the set with a name or ID
 \item The data analyst has just begun the classification process.
 \end{packed_enumerate}\\
 \hline
@@ -598,7 +598,7 @@ Postconditions:&\begin{packed_enumerate}
 Normal Flow:&1.0 Select multiple files to upload.\newline
 \begin{packed_enumerate}
 \item The data analyst uploads their data sets.
-\item The data beings to be classified
+\item The data begins to be classified
 \item As the data is going through classifications, each step is being logged to show user status
 \item When the data is done being classified, the logs will have available the input, output, and status logs
 \end{packed_enumerate}\\
@@ -607,6 +607,14 @@ Alternate Flows:&1.1 User uploads more than one file. (branch after step 4)\newl
 \begin{packed_enumerate}
 \item Each uploaded file will enter a queue
 \item While queue is not empty, continue Normal Flow
+\end{packed_enumerate}\\
+Alternate Flows:&1.2 User replaces a file. (branch after step 1)\newline
+\begin{packed_enumerate}
+\item The previous file(s) will be deleted from the upload process and the new file(s) will take its place
+\end{packed_enumerate}\\
+Alternate Flows:&1.3 User cancels classification of file (branch after step 3)\newline
+\begin{packed_enumerate}
+\item The file(s) selected to stop will break out of the code they're being run through and display a "User Ended" message. Any other files not yet classified or stopped will continue classification.
 \end{packed_enumerate}\\
 \hline
 Exceptions:&1.0.E.1 Data analyst uploads a supported file, but incompatible data. (at step 3)\newline
