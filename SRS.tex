@@ -254,7 +254,7 @@ Data Scientist without programming knowledge&A Data Scientist that will require\
 \hline
 \end{longtable}
 \subsection{Operating Environment}
-The program will exist as a web based application with a React \gls{front end}, Flask \gls{back end} as well as an s3 database and a block storage system.
+The program will exist as a web based application with a React \gls{front end}, Flask \gls{back end} as well as an s3 database and a block storage system. The data classifier will be written in Python.
 \subsection{Design and Implementation Constraints}
 The \gls{back end}/machine learning parts of the application will have to be written in Python coupled with the Scikit Learn. Our application also must implement a web based interface that will be written in JavaScript that will call APIs built in the \gls{back end}.
 \subsection{User Documentation}
@@ -890,7 +890,11 @@ During the classification stage, safety is not a concern. After the catalog phas
 \appendix
 
 \section{Analysis Models}
-Optionally, include any pertinent analysis models, such as data flow diagrams, class diagrams, state-transition diagrams, or entity-relationship diagrams.
+\subsection{Deployment Diagram}
+\includegraphics[scale = 0.70]{bread_deployment_diagram.png}
+\begingroup
+\endgroup
+(See section 2.5 for details.)
 
 \section{Issues List}
 \begin{itemize}
